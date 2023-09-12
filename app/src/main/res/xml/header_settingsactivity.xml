@@ -1,4 +1,5 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <!--NOTE: this will be regarded as 'preferences' when it comes to the package...-->
     <Preference
         app:fragment="com.nugget.hios.SettingsActivity$UpdatesPreferences"
@@ -29,5 +30,15 @@
         app:icon="@drawable/ic_aboutapp"
         app:key="about_header"
         app:title="@string/about_app" />
+
+    <PreferenceCategory
+        android:title="@string/title_privacy" >
+        <Preference
+            app:fragment="com.nugget.hios.preferences.PrivacyFragment"
+            app:icon="@drawable/ic_privacy"
+            app:key="privacy_header"
+            app:title="@string/privacypolicy_header" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

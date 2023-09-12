@@ -1,41 +1,26 @@
-package com.nugget.hios.ui;
-
-import androidx.lifecycle.ViewModelProvider;
+package com.nugget.hios.ui.preferences;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import com.nugget.hios.R;
-import com.nugget.hios.databinding.FragmentSocialBinding;
+import com.nugget.hios.databinding.FragmentRestauranthelpBinding;
 
-public class SocialFragment extends Fragment {
+public class PrivacyFragment extends Fragment {
 
-    private FragmentSocialBinding binding;
+    private FragmentRestauranthelpBinding binding;
 
-    public static SocialFragment newInstance() {
-        return new SocialFragment();
-    }
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        binding = FragmentSocialBinding.inflate(inflater, container, false);
-
+        binding = FragmentRestauranthelpBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         WebView webView = (WebView)root.findViewById(R.id.webView);
@@ -52,7 +37,7 @@ public class SocialFragment extends Fragment {
                 case Configuration .UI_MODE_NIGHT_YES:
                 case Configuration.UI_MODE_NIGHT_NO:
                 case Configuration.UI_MODE_NIGHT_UNDEFINED:
-                    WebSettingsCompat.setForceDark(webView.getSettings(), FORCE_DARK_ON);
+                    WebRestaurantCompat.setForceDark(webView.getRestaurant(), FORCE_DARK_ON);
                     break;
             }
         }*/
@@ -68,9 +53,14 @@ public class SocialFragment extends Fragment {
             }
         });*/
 
-        webView.loadUrl("https://discord.com/invite/kbK2xkJmka");
+        webView.loadUrl("https://sites.google.com/view/hios-by-thc/privacy-policy");
 
         return root;
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

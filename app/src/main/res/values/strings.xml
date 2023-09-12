@@ -37,9 +37,11 @@
 
     <string name="socials_header">Socials</string>
 
+    <string name="privacypolicy_header">Privacy Policy</string>
+
     <!-- Updates Preferences -->
     <string name="updates_title">Check for Updates</string>
-    <string name="updates_summary">This Version: 2.2.1</string>
+    <string name="updates_summary">This Version: 2.2.2</string>
 
     <string name="whatsnew_title">What\'s New?</string>
 
@@ -69,4 +71,9 @@
     <string name="securelogin_header">Secure Login</string>
     <string name="internet_header">WiFi and Internet</string>
 
+    <!-- Harmony Social -->
+    <string name="discordButton">Launch Harmony Social</string>
+
+    <!-- Privacy Policy titles from settings -->
+    <string name="title_privacy">Privacy</string>
 </resources>

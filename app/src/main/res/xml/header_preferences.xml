@@ -26,7 +26,7 @@
 
     <Preference
         app:fragment="com.nugget.hios.ui.helpcenter.MoreFragment"
-        app:icon="@drawable/ic_moreicon"
+        app:icon="@drawable/ic_social"
         app:key="more_header"
         app:title="@string/title_more" />
 
