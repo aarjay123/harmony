@@ -74,6 +74,7 @@
     <!-- Harmony Social -->
     <string name="discordButton">Launch Harmony Social</string>
 
-    <!-- Privacy Policy titles from settings -->
+    <!-- category titles from settings -->
+    <string name="title_preferences">Preferences</string>
     <string name="title_privacy">Privacy</string>
 </resources>
