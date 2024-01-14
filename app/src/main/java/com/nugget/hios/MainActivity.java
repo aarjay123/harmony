@@ -95,16 +95,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //ONCLICK LISTENERS GOING TO PAGES ON TOOLBAR POPUP
-    public boolean social(MenuItem item) {
-        startActivity(new Intent(MainActivity.this, SocialActivity.class));
-        return true;
-    }
-
-    public boolean securelogin(MenuItem item) {
-        startActivity(new Intent(MainActivity.this, SecureloginActivity.class));
-        return true;
-    }
-
     public boolean downloadmenus(MenuItem item) {
         Uri uri = Uri.parse("https://www.dropbox.com/scl/fo/7gmlnnjcau1np91ee83ht/h?rlkey=ifj506k3aal7ko7tfecy8oqyq&dl=0");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);

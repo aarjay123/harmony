@@ -60,7 +60,7 @@
 
     <!-- Updates Preferences -->
     <string name="updates_title">Check for Updates</string>
-    <string name="updates_summary">This Version: 2.3.1</string>
+    <string name="updates_summary">This Version: 2.3.2</string>
 
     <string name="notifications_title">Update Notifications</string>
     <string name="notifications_summary">Join our WhatsApp Channel to get notified every time we update HiOSMobile.</string>

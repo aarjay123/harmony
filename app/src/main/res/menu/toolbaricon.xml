@@ -8,17 +8,6 @@
         app:showAsAction="ifRoom">
         <menu>
             <group
-                android:id="@+id/toolbaricon_1">
-
-                <item
-                    android:id="@+id/topmenuSecurelogin"
-                    android:title="@string/securelogin_header"
-                    android:icon="@drawable/ic_securelogin"
-                    android:onClick="securelogin" />
-
-            </group>
-
-            <group
                 android:id="@+id/toolbaricon_2">
 
                 <item

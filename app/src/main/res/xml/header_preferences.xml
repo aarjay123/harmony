@@ -12,23 +12,11 @@
         app:key="hotel_header"
         app:title="@string/title_notifications" />
 
-    <!--Preference
-        app:fragment="com.nugget.hios.ui.helpcenter.RewardsFragment"
-        app:icon="@drawable/ic_rewards"
-        app:key="rewards_header"
-        app:title="@string/title_rewards" /-->
-
     <Preference
         app:fragment="com.nugget.hios.ui.helpcenter.RoomkeyFragment"
         app:icon="@drawable/ic_roomkeyicon"
         app:key="key_header"
         app:title="@string/title_roomkey" />
-
-    <Preference
-        app:fragment="com.nugget.hios.ui.helpcenter.SecureloginFragment"
-        app:icon="@drawable/ic_secureloginicon"
-        app:key="securelogin_header"
-        app:title="@string/securelogin_header" />
 
     <Preference
         app:fragment="com.nugget.hios.ui.helpcenter.MoreFragment"

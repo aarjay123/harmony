@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.nugget.hios.R;
 import com.nugget.hios.databinding.FragmentSupportBinding;
-import com.nugget.hios.ui.securelogin.SupportViewModel;
+import com.nugget.hios.ui.support.SupportViewModel;
 
 public class ComingsoonFragment extends Fragment {
 
