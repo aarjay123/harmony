@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">HiOSMobile</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Dashboard</string>
     <string name="title_dashboard">Food</string>
     <string name="title_notifications">Hotel</string>
     <string name="title_rewards">Rewards</string>
@@ -19,6 +19,7 @@
 
     <!-- URLs -->
     <string name="updates_url" translatable="false">https://sites.google.com/view/hios-by-thc/download#h.51zx1qe3xfrl</string>
+    <string name="autoupdate_url">https://sites.google.com/view/hios-by-thc/autoupdate</string>
     <string name="whatsnew_url" translatable="false">https://sites.google.com/view/hios-by-thc/download#h.evwm3pfxwkdn</string>
     <string name="notifications_url" translatable="false">https://whatsapp.com/channel/0029Va8U5lXISTkDAhk4bj3J</string>
     <string name="hiosmusic_url" translatable="false">https://sites.google.com/view/hios-by-thc/download-hiosmusic#h.ogr0r3hzljpf</string>
@@ -59,8 +60,15 @@
     <string name="privacypolicy_header">Privacy Policy</string>
 
     <!-- Updates Preferences -->
+    <string name="update_category">Update HiOSMobile</string>
+
     <string name="updates_title">Check for Updates</string>
-    <string name="updates_summary">This Version: 2.3.2</string>
+    <string name="updates_summary">This Version: 2.3.2.1</string>
+
+    <string name="autoupdate_title">Auto-Update HiOSMobile</string>
+    <string name="autoupdate_summary">Learn how to update HiOSMobile automatically</string>
+
+    <string name="notifications_category">Update notifications and more</string>
 
     <string name="notifications_title">Update Notifications</string>
     <string name="notifications_summary">Join our WhatsApp Channel to get notified every time we update HiOSMobile.</string>
