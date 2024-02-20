@@ -14,7 +14,7 @@
 
     <Preference
         app:fragment="com.nugget.hios.ui.helpcenter.RoomkeyFragment"
-        app:icon="@drawable/ic_roomkeyicon"
+        app:icon="@drawable/ic_keyicon"
         app:key="key_header"
         app:title="@string/title_roomkey" />
 
