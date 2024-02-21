@@ -13,7 +13,7 @@
                 <item
                     android:id="@+id/topmenuDownloadmenus"
                     android:title="@string/download_menus"
-                    android:icon="@drawable/ic_menus"
+                    android:icon="@drawable/ic_menu"
                     android:onClick="downloadmenus" />
 
             </group>
