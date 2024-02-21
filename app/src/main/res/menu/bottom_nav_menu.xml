@@ -17,6 +17,6 @@
 
     <item
         android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_roomkey"
+        android:icon="@drawable/ic_key"
         android:title="@string/title_roomkey" />
 </menu>
