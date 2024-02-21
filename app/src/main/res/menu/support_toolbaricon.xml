@@ -14,7 +14,7 @@
             <item
                 android:id="@+id/helpTc"
                 android:title="@string/title_activity_tc"
-                android:icon="@drawable/ic_tc"
+                android:icon="@drawable/ic_aboutapp"
                 android:onClick="tc" />
             <item
                 android:id="@+id/topmenuFeedback"
