@@ -3,7 +3,7 @@
     <PreferenceCategory
         app:title="@string/tutorial_title">
         <Preference
-            app:fragment="com.nugget.hios.ui.preferences.TutorialFragment"
+            app:fragment="com.nugget.hios.ui.helpcenter.TutorialFragment"
             app:icon="@drawable/ic_tutorial"
             app:key="privacypolicy_header"
             app:title="@string/tutorial_header" >
