@@ -1,6 +1,14 @@
 package com.nugget.hios;
 
+import android.app.DownloadManager;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
+import android.webkit.URLUtil;
+import android.widget.Button;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceScreen;
 
 public class SettingsActivity extends AppCompatActivity implements
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
@@ -91,6 +100,16 @@ public class SettingsActivity extends AppCompatActivity implements
             setPreferencesFromResource(R.xml.updates_preferences, rootKey);
         }
     }
+
+        //MANUAL UPDATE DOWNLOAD
+    public void downloadfile(View view) {
+        DownloadManager manager;
+        manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+        Uri uri = Uri.parse("https://github.com/aarjay123/harmony/releases/latest/download/hiosmobile.apk");
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+        long reference = manager.enqueue(request);
+    }//TODO: MAKE MANUAL UPDATE WORK.
 
     public static class AppsPreferences extends PreferenceFragmentCompat {
 

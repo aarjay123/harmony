@@ -2,7 +2,7 @@
 <resources>
     <color name="md_theme_light_primary">#00677C</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
-    <color name="md_theme_light_primaryContainer">#B1ECFF</color>
+    <color name="md_theme_light_primaryContainer">#d2e4ff</color>
     <color name="md_theme_light_onPrimaryContainer">#001F27</color>
     <color name="md_theme_light_secondary">#4B626A</color>
     <color name="md_theme_light_onSecondary">#FFFFFF</color>

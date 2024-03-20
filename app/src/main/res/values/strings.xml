@@ -61,11 +61,13 @@
     <!-- Updates Preferences -->
     <string name="update_category">Update HiOSMobile</string>
 
-    <string name="updates_title">Check for Updates</string>
-    <string name="updates_summary">This Version: 2.4-pre1</string>
+    <string name="updates_title">Manually Update HiOSMobile</string>
+    <string name="updates_summary">Download the APK installer file for the latest app version to your Downloads folder.\nYou will need to install it manually from there.\n\nThis Version: 2.4-pre2</string>
+    <string name="updates_description">Tap the button below to download the latest HiOSMobile version to your Downloads folder.</string>
+    <string name="updates_button">Download HiOSMobile File</string>
 
     <string name="autoupdate_title">Auto-Update HiOSMobile</string>
-    <string name="autoupdate_summary">Learn how to update HiOSMobile automatically</string>
+    <string name="autoupdate_summary">Learn how to update HiOSMobile automatically on our website.</string>
 
     <string name="notifications_category">Update notifications and more</string>
 
