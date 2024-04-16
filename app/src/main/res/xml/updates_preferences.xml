@@ -6,18 +6,31 @@
         <Preference
             android:title="@string/updates_title"
             android:summary="@string/updates_summary"
-            app:icon="@drawable/ic_update">
+            app:icon="@drawable/ic_update"
+            app:allowDividerBelow="true" >
         <!--app:key="manualupdate_header"
             app:fragment="com.nugget.hios.ui.preferences.updates.ManualUpdateFragment"-->
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/aarjay123/harmony/releases/latest/download/hiosmobile.apk">
+                android:data="@string/direct_download_url">
             </intent>
-       </Preference>
+        </Preference>
+        <Preference
+            android:title="@string/updates_prerelease_title"
+            android:summary="@string/updates_prerelease_summary"
+            app:icon="@drawable/ic_prerelease"
+            app:allowDividerAbove="true"
+            app:allowDividerBelow="true">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/github_prerelease_url">
+            </intent>
+        </Preference>
         <Preference
             android:title="@string/autoupdate_title"
             android:summary="@string/autoupdate_summary"
-            app:icon="@drawable/ic_autoupdate">
+            app:icon="@drawable/ic_autoupdate"
+            app:allowDividerAbove="true" >
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="@string/autoupdate_url">
