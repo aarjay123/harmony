@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="md_theme_light_primary">#00677C</color>
+    <color name="md_theme_light_primary">#0061a6</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#d2e4ff</color>
-    <color name="md_theme_light_onPrimaryContainer">#001F27</color>
-    <color name="md_theme_light_secondary">#4B626A</color>
+    <color name="md_theme_light_onPrimaryContainer">#001c37</color>
+    <color name="md_theme_light_secondary">#535f70</color>
     <color name="md_theme_light_onSecondary">#FFFFFF</color>
-    <color name="md_theme_light_secondaryContainer">#CEE7F0</color>
-    <color name="md_theme_light_onSecondaryContainer">#061E25</color>
-    <color name="md_theme_light_tertiary">#585C7E</color>
+    <color name="md_theme_light_secondaryContainer">#d7e3f8</color>
+    <color name="md_theme_light_onSecondaryContainer">#101c2b</color>
+    <color name="md_theme_light_tertiary">#6c5778</color>
     <color name="md_theme_light_onTertiary">#FFFFFF</color>
-    <color name="md_theme_light_tertiaryContainer">#DFE0FF</color>
-    <color name="md_theme_light_onTertiaryContainer">#151937</color>
+    <color name="md_theme_light_tertiaryContainer">#f3daff</color>
+    <color name="md_theme_light_onTertiaryContainer">#251431</color>
     <color name="md_theme_light_error">#BA1A1A</color>
     <color name="md_theme_light_errorContainer">#FFDAD6</color>
     <color name="md_theme_light_onError">#FFFFFF</color>
@@ -55,9 +55,9 @@
     <color name="md_theme_dark_outline">#899296</color>
     <color name="md_theme_dark_inverseOnSurface">#191C1D</color>
     <color name="md_theme_dark_inverseSurface">#E1E3E4</color>
-    <color name="md_theme_dark_inversePrimary">#00677C</color>
+    <color name="md_theme_dark_inversePrimary">#0061A6</color>
     <color name="md_theme_dark_shadow">#000000</color>
-    <color name="md_theme_dark_surfaceTint">#58D6F7</color>
+    <color name="md_theme_dark_surfaceTint">#A0CAFF</color>
     <color name="md_theme_dark_outlineVariant">#40484B</color>
     <color name="md_theme_dark_scrim">#000000</color>
 </resources>

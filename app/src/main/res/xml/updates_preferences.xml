@@ -6,9 +6,13 @@
         <Preference
             android:title="@string/updates_title"
             android:summary="@string/updates_summary"
-            app:icon="@drawable/ic_update"
-            app:key="manualupdate_header"
-            app:fragment="com.nugget.hios.ui.preferences.updates.ManualUpdateFragment">
+            app:icon="@drawable/ic_update">
+        <!--app:key="manualupdate_header"
+            app:fragment="com.nugget.hios.ui.preferences.updates.ManualUpdateFragment"-->
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/aarjay123/harmony/releases/latest/download/hiosmobile.apk">
+            </intent>
        </Preference>
         <Preference
             android:title="@string/autoupdate_title"

@@ -13,13 +13,22 @@
             </intent>
         </Preference>
     </PreferenceCategory>
-    <Preference
+    <!--Preference
         android:title="@string/hiosweather_title"
         android:summary="@string/hiosweather_summary"
         app:icon="@drawable/ic_hiosweather" >
         <intent
             android:action="android.intent.action.VIEW"
             android:data="@string/hiosweather_url" >
+        </intent>
+    </Preference-->
+    <Preference
+        android:title="@string/nuggetdev_apps_title"
+        android:summary="@string/nuggetdev_apps_summary"
+        app:icon="@drawable/ic_moreicon">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="@string/nuggetdev_url" >
         </intent>
     </Preference>
 </PreferenceScreen>
