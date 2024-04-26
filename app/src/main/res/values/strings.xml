@@ -70,7 +70,7 @@
     <string name="update_category">Update HiOSMobile</string>
 
     <string name="updates_title">Manually Update HiOSMobile</string>
-    <string name="updates_summary">Download the latest app version as an APK installer file.\n\n1. Tap this setting, then you\'ll need choose \'Download Anyway\' to the popup, since it isn\'t harmful.\n2. Then, allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.4.1-pre1</string>
+    <string name="updates_summary">Download the latest app version as an APK installer file.\n\n1. Tap this setting, then you\'ll need choose \'Download Anyway\' to the popup, since it isn\'t harmful.\n2. Then, allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.4.1</string>
     <string name="updates_description">Tap the button below to download the latest HiOSMobile version to your Downloads folder.</string>
     <string name="updates_button">Download HiOSMobile File</string>
 
