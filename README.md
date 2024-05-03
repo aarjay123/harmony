@@ -18,7 +18,8 @@ You can see what's new by looking at the <a href="https://github.com/aarjay123/h
 
 <h2>Other Source Code</h2>
 - The source code for HiOSWebCore is here: <a href="https://github.com/thehighlandcafe/hioswebcore">HiOSWebCore Source Code</a>.<br><br>
-- The source code for HiOSMobileWeb is here: <a href="https://github.com/thehighlandcafe/hiosmobileweb">HiOSMobileWeb Source Code</a>.
+- The source code for HiOSMobileWeb is here: <a href="https://github.com/thehighlandcafe/hiosmobileweb">HiOSMobileWeb Source Code</a>.<br><br>
+- The source code for HiOSDesktop is here: <a href="https://github.com/aarjay123/hiosdesktop">HiOSDesktop Source Code</a>.
 
 <h2>Our Websites</h2>
 - HiOS Apps website: <a href="https://sites.google.com/view/hios-by-thc">https://sites.google.com/view/hios-by-thc</a><br><br>
