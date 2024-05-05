@@ -31,4 +31,16 @@
             android:data="@string/nuggetdev_url" >
         </intent>
     </Preference>
+    <PreferenceCategory
+        app:title="@string/windows">
+        <Preference
+            android:title="@string/hiosdesktop_title"
+            android:summary="@string/hiosdesktop_summary"
+            app:icon="@drawable/ic_hiosdesktop" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/hiosdesktop_url" >
+            </intent>
+        </Preference>
+    </PreferenceCategory>
 </PreferenceScreen>

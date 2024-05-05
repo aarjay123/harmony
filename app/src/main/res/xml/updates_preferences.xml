@@ -30,7 +30,7 @@
             android:title="@string/autoupdate_title"
             android:summary="@string/autoupdate_summary"
             app:icon="@drawable/ic_autoupdate"
-            app:allowDividerAbove="true" >
+            app:allowDividerAbove="true">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="@string/autoupdate_url">
@@ -39,7 +39,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        app:title="@string/notifications_category">
+        app:title="@string/notifications_category"
+        app:allowDividerAbove="false" >
         <Preference
             android:title="@string/notifications_title"
             android:summary="@string/notifications_summary"
