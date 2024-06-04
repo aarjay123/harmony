@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" translatable="false">HiOS for Android</string>
-    <string name="title_home">Dashboard</string>
+    <string name="app_name" translatable="false">HiApp</string>
+    <string name="title_home">Home</string>
     <string name="title_dashboard">Food</string>
     <string name="title_notifications">Hotel</string>
     <string name="title_rewards">Rewards</string>
@@ -60,7 +60,7 @@
 
     <string name="websites_header">Websites</string>
 
-    <string name="about_app">About HiOS for Android</string>
+    <string name="about_app">About HiApp</string>
 
     <string name="socials_header">Socials</string>
 
@@ -68,23 +68,23 @@
     <string name="privacypolicy_header">Privacy Policy</string>
 
     <!-- Updates Preferences -->
-    <string name="update_category">Update HiOS for Android</string>
+    <string name="update_category">Update the HiApp</string>
 
-    <string name="updates_title">Manually Update HiOS for Android</string>
-    <string name="updates_summary">Download the latest app version as an APK installer file.\n\n1. Tap this setting, then you\'ll need choose \'Download Anyway\' to the popup, since it isn\'t harmful.\n2. Then, allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.4.1</string>
-    <string name="updates_description">Tap the button below to download the latest HiOSMobile version to your Downloads folder.</string>
-    <string name="updates_button">Download HiOS for Android File</string>
+    <string name="updates_title">Manually Update the HiApp</string>
+    <string name="updates_summary">Download the latest app version as an APK installer file.\n\n1. Tap this setting, then you\'ll need choose \'Download Anyway\' to the popup, since it isn\'t harmful.\n2. Then, allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.4.2</string>
+    <string name="updates_description">Tap the button below to download the latest HiApp version to your Downloads folder.</string>
+    <string name="updates_button">Download HiApp File</string>
 
     <string name="updates_prerelease_title">Download Unstable Version</string>
-    <string name="updates_prerelease_summary">Download the latest HiOS for Android pre-release version.\n\nOn the releases page on GitHub, find one with the \'pre-release\' tag.\n\nCAUTION: Pre-releases can be unstable!</string>
+    <string name="updates_prerelease_summary">Download the latest HiApp pre-release version.\n\nOn the releases page on GitHub, find one with the \'pre-release\' tag.\n\nCAUTION: Pre-releases can be unstable!</string>
 
-    <string name="autoupdate_title">Auto-Update HiOS for Android</string>
-    <string name="autoupdate_summary">Learn how to update HiOS for Android automatically on our website.</string>
+    <string name="autoupdate_title">Auto-Update the HiApp</string>
+    <string name="autoupdate_summary">Learn how to update the HiApp automatically on our website.</string>
 
     <string name="notifications_category">Update notifications and more</string>
 
     <string name="notifications_title">Update Notifications</string>
-    <string name="notifications_summary">Join our WhatsApp Channel to get notified every time we update HiOS for Android.</string>
+    <string name="notifications_summary">Join our WhatsApp Channel to get notified every time we update the HiApp.</string>
 
     <string name="whatsnew_title">What\'s New?</string>
 
@@ -100,8 +100,8 @@
 
     <string name="windows">Windows Apps</string>
 
-    <string name="hiosdesktop_title">HiOS for Windows</string>
-    <string name="hiosdesktop_summary">This is our newest app, this is a version of HiOS designed for Windows 10 and 11!</string>
+    <string name="hiosdesktop_title">HiApp for Windows</string>
+    <string name="hiosdesktop_summary">This is our newest app, this is a version of the HiApp designed for Windows 10 and 11!</string>
 
     <!-- Websites Preferences -->
     <string name="hienterprises_title">The Highland Cafe™ Enterprises Website</string>
@@ -134,9 +134,9 @@
     <string name="internet_header">WiFi and Internet</string>
 
     <!--Help Center Strings -->
-    <string name="tutorial_title">How to use HiOS for Android</string>
+    <string name="tutorial_title">How to use the HiApp</string>
     <string name="tutorial_header">Navigation Tutorial</string>
-    <string name="tutorial_summary">Have a look at our tutorial animation to see how to get around HiOS for Android.</string>
+    <string name="tutorial_summary">Have a look at our tutorial animation to see how to get around the HiApp.</string>
 
     <string name="general_title">General Help</string>
 
