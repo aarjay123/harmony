@@ -9,9 +9,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuCompat;
@@ -20,6 +22,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
 import com.nugget.hios.databinding.ActivityMainBinding;
 
@@ -81,6 +84,28 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.toolbaricon_fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopup(v);
+            }
+        });
+    }
+
+    private void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.toolbaricon, popup.getMenu());
+
+        MenuCompat.setGroupDividerEnabled(popup.getMenu(), true);
+
+        popup.show();
     }
 
     //SHOW TOOLBAR THREE DOT ICON
@@ -93,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
+
+    //DISPLAY TOOLBARICON
 
     //ONCLICK LISTENERS GOING TO PAGES ON TOOLBAR POPUP
     public boolean downloadmenus(MenuItem item) {

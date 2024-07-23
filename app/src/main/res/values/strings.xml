@@ -71,7 +71,7 @@
     <string name="update_category">Update the HiApp</string>
 
     <string name="updates_title">Manually Update the HiApp</string>
-    <string name="updates_summary">Download the latest app version as an APK installer file.\n\n1. Tap this setting, then you\'ll need choose \'Download Anyway\' to the popup, since it isn\'t harmful.\n2. Then, allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.4.2.1</string>
+    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since the HiApp is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.5</string>
     <string name="updates_description">Tap the button below to download the latest HiApp version to your Downloads folder.</string>
     <string name="updates_button">Download HiApp File</string>
 
