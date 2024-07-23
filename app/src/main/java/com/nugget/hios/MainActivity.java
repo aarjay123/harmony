@@ -8,11 +8,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.PopupMenu;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +34,8 @@ import org.imaginativeworld.oopsnointernet.callbacks.ConnectionCallback;
 import org.imaginativeworld.oopsnointernet.dialogs.pendulum.DialogPropertiesPendulum;
 import org.imaginativeworld.oopsnointernet.dialogs.pendulum.NoInternetDialogPendulum;
 
+import java.lang.reflect.Field;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.TransparentStatusBar);
 
         //Initialize Firebase
         FirebaseApp.initializeApp(this);
@@ -85,17 +92,25 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.toolbaricon_fab);
-
-        fab.setOnClickListener(new View.OnClickListener() {
+        View moreItemView = navView.findViewById(R.id.navigation_more);
+        moreItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showPopup(v);
             }
         });
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.toolbaricon_fab);
+
+        //fab.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View v) {
+              //  showPopup(v);
+            //}
+        //});
     }
 
     private void showPopup(View v) {

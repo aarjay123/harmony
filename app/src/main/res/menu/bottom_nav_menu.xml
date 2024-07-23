@@ -11,6 +11,11 @@
         android:title="@string/title_dashboard" />
 
     <item
+        android:id="@+id/navigation_more"
+        android:icon="@drawable/ic_morehoriz"
+        android:title="@string/title_more" />
+
+    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_worsteastern"
         android:title="@string/title_notifications" />
