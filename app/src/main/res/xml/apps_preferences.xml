@@ -31,7 +31,7 @@
             android:data="@string/nuggetdev_url" >
         </intent>
     </Preference>
-    <PreferenceCategory
+    <!--PreferenceCategory
         app:title="@string/windows">
         <Preference
             android:title="@string/hiosdesktop_title"
@@ -42,5 +42,5 @@
                 android:data="@string/hiosdesktop_url" >
             </intent>
         </Preference>
-    </PreferenceCategory>
+    </PreferenceCategory-->
 </PreferenceScreen>

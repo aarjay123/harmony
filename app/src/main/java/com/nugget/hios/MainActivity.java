@@ -120,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //showPopup(v);
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
                 builder.setTitle(R.string.title_more);
 
                 String[] moreItems = {getString(R.string.download_menus), getString(R.string.title_activity_settings), getString(R.string.title_comingsoon), getString(R.string.title_activity_help)};
