@@ -5,7 +5,7 @@
         android:id="@+id/moreVertical"
         android:icon="@drawable/vertmore"
         android:title="@string/title_more"
-        app:showAsAction="never">
+        app:showAsAction="always">
         <menu>
             <group
                 android:id="@+id/toolbaricon_2">

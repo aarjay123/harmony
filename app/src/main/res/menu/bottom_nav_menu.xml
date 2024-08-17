@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/selector_home"
         android:title="@string/title_home" />
 
     <item
@@ -10,18 +10,18 @@
         android:icon="@drawable/ic_restaurant"
         android:title="@string/title_dashboard" />
 
-    <item
+    <!--item
         android:id="@+id/navigation_more"
         android:icon="@drawable/ic_morehoriz"
-        android:title="@string/title_more" />
+        android:title="@string/title_more" /-->
 
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_worsteastern"
+        android:icon="@drawable/selector_hotel"
         android:title="@string/title_notifications" />
 
     <item
         android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_key"
+        android:icon="@drawable/selector_roomkey"
         android:title="@string/title_roomkey" />
 </menu>
