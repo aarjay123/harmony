@@ -13,7 +13,14 @@ HiOSMobile is the main app by The Highland Cafe™️ Enterprises for doing ever
 <br><br>
 <h2>How to Install HiOSMobile on iOS</h2>
 1) on Safari, visit the HiOSMobileWeb website: <a href="https://thehighlandcafe.github.io/hiosmobileweb"(HiOSMobileWeb Website)</a><br><br>
-2) then, go to the <b>Share</b> menu, then tap <b>Add to Home Screen</b>
+2) then, go to the <b>Share</b> menu, then tap <b>Add to Home Screen</b>.
+3) to open HiOSMobile, go back to the homescreen and tap the HiOSMobile icon.
+<br><br>
+<h2>How to update HiOSMobile on iOS</h2>
+1) open Settings
+2) go to Safari
+3) go to cookies and saved site data and find "thehighlandcafe.github.io"
+4) delete all saved site data, this will reset and update the PWA.
 
 *Please note you require an internet connection to access all our services.
 
