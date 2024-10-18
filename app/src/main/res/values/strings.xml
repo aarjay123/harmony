@@ -68,27 +68,30 @@
     <string name="privacypolicy_header">Privacy Policy</string>
 
     <!-- Updates Preferences -->
-    <string name="update_category">Update the HiOSMobile</string>
+    <string name="update_category">Update HiOSMobile</string>
 
-    <string name="updates_title">Manually Update the HiOSMobile</string>
-    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since the HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.5.2</string>
+    <string name="updates_title">Manually Update HiOSMobile</string>
+    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.5.2.1</string>
     <string name="updates_description">Tap the button below to download the latest HiOSMobile version to your Downloads folder.</string>
     <string name="updates_button">Download HiOSMobile File</string>
 
     <string name="updates_prerelease_title">Download Unstable Version</string>
     <string name="updates_prerelease_summary">Download the latest HiOSMobile pre-release version.\n\nOn the releases page on GitHub, find one with the \'pre-release\' tag.\n\nCAUTION: Pre-releases can be unstable!</string>
 
-    <string name="autoupdate_title">Auto-Update the HiOSMobile</string>
-    <string name="autoupdate_summary">Learn how to update the HiOSMobile automatically on our website.</string>
+    <string name="autoupdate_title">Auto-Update HiOSMobile</string>
+    <string name="autoupdate_summary">Learn how to update HiOSMobile automatically on our website.</string>
 
     <string name="notifications_category">Update notifications and more</string>
 
     <string name="notifications_title">Update Notifications</string>
-    <string name="notifications_summary">Join our WhatsApp Channel to get notified every time we update the HiOSMobile.</string>
+    <string name="notifications_summary">Join our WhatsApp Channel to get notified every time we update HiOSMobile.</string>
 
     <string name="whatsnew_title">What\'s New?</string>
 
     <!-- Apps Preferences -->
+    <string name="hiosmusic_title">HiOSMusic</string>
+    <string name="hiosmusic_summary">This is our brand new music app. Your music, your vibe.</string>
+    
     <string name="hiosweather_title">HiOSWeather</string>
     <string name="hiosweather_summary">This is our weather app, which simply allows you to check the weather, use widgets, and more!</string>
 
@@ -101,7 +104,7 @@
     <string name="windows">Windows Apps</string>
 
     <string name="hiosdesktop_title">HiOSMobile for Windows</string>
-    <string name="hiosdesktop_summary">This is our newest app, this is a version of the HiOSMobile designed for Windows 10 and 11!</string>
+    <string name="hiosdesktop_summary">This is our newest app, this is a version of HiOSMobile designed for Windows 10 and 11!</string>
 
     <!-- Websites Preferences -->
     <string name="hienterprises_title">The Highland Cafe™ Enterprises Website</string>
@@ -134,9 +137,9 @@
     <string name="internet_header">WiFi and Internet</string>
 
     <!--Help Center Strings -->
-    <string name="tutorial_title">How to use the HiOSMobile</string>
+    <string name="tutorial_title">How to use HiOSMobile</string>
     <string name="tutorial_header">Navigation Tutorial</string>
-    <string name="tutorial_summary">Have a look at our tutorial animation to see how to get around the HiOSMobile.</string>
+    <string name="tutorial_summary">Have a look at our tutorial animation to see how to get around HiOSMobile.</string>
 
     <string name="general_title">General Help</string>
 

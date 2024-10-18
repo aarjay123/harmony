@@ -4,6 +4,15 @@
     <PreferenceCategory
         app:title="@string/recommended">
         <Preference
+            android:title="@string/hiosmusic_title"
+            android:summary="@string/hiosmusic_summary"
+            app:icon="@drawable/ic_hiosmusic">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/hiosmusic_url">
+            </intent>
+        </Preference>
+        <Preference
             android:title="@string/hirewards_title"
             android:summary="@string/hirewards_summary"
             app:icon="@drawable/new_rewards" >
