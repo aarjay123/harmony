@@ -4,12 +4,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -72,6 +74,21 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setElevation(0);
+
+        //setting the colour of the toolbar to be the same as the colour of the statusbar
+        int statusBarColour = getWindow().getStatusBarColor();
+        toolbar.setBackgroundColor(statusBarColour);
+
+        //setting the system navbar colour to be the same as the bottom nav bar
+        TypedValue typedValue = new TypedValue();
+        getTheme().resolveAttribute(android.R.attr.windowBackground, typedValue, true);
+        int windowBackgroundColor = typedValue.data;
+
+        getWindow().setNavigationBarColor(windowBackgroundColor);
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -108,7 +125,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean comingsoon(MenuItem item) {
-        startActivity(new Intent(MainActivity.this, ComingsoonActivity.class));
+        //startActivity(new Intent(MainActivity.this, ComingsoonActivity.class));
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.dialog_message)
+                .setTitle(R.string.dialog_title)
+                .setNegativeButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //user taps Okay button
+                    }
+                })
+                .setPositiveButton(R.string.dialog_openhelp, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent(MainActivity.this, HelpcenterActivity.class));
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
         return true;
     }
 

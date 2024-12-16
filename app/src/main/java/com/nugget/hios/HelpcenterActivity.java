@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 public class HelpcenterActivity extends AppCompatActivity implements
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
@@ -30,6 +33,22 @@ public class HelpcenterActivity extends AppCompatActivity implements
         } else {
             setTitle(savedInstanceState.getCharSequence(TITLE_TAG));
         }
+
+        //setting the toolbar
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        //setting the colour of the toolbar to be the same as the colour of the statusbar
+        int statusBarColour = getWindow().getStatusBarColor();
+        toolbar.setBackgroundColor(statusBarColour);
+
+        //setting the settings pages background colour to be the same as the statusbar for consistency
+        FrameLayout settingsLayout = findViewById(R.id.settings);
+        settingsLayout.setBackgroundColor(statusBarColour);
+
+        //setting the system navbar colour to be the same as the statusbar
+        getWindow().setNavigationBarColor(statusBarColour);
+
         getSupportFragmentManager().addOnBackStackChangedListener(
                 new FragmentManager.OnBackStackChangedListener() {
                     @Override
@@ -86,7 +105,7 @@ public class HelpcenterActivity extends AppCompatActivity implements
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.support_toolbaricon, menu);
@@ -106,5 +125,5 @@ public class HelpcenterActivity extends AppCompatActivity implements
     public boolean feedback(MenuItem item) {
         startActivity(new Intent(HelpcenterActivity.this, FeedbackActivity.class));
         return true;
-    }
+    }*/
 }

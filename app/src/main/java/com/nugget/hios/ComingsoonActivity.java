@@ -7,6 +7,7 @@ import androidx.core.app.NavUtils;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.nugget.hios.ui.comingsoon.ComingsoonFragment;
 
 public class ComingsoonActivity extends AppCompatActivity {
@@ -20,6 +21,10 @@ public class ComingsoonActivity extends AppCompatActivity {
                     .replace(R.id.container, ComingsoonFragment.newInstance())
                     .commitNow();
         }
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setElevation(0);
 
         ActionBar actionBar = getSupportActionBar();
 

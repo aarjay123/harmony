@@ -71,7 +71,7 @@
     <string name="update_category">Update HiOSMobile</string>
 
     <string name="updates_title">Manually Update HiOSMobile</string>
-    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.5.2.1</string>
+    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.6</string>
     <string name="updates_description">Tap the button below to download the latest HiOSMobile version to your Downloads folder.</string>
     <string name="updates_button">Download HiOSMobile File</string>
 
@@ -148,5 +148,11 @@
     <string name="fcm_message">FCM Message</string>
 
     <string name="placeholder">Placeholder Text</string>
+
+    <!-- Coming Soon Alert Dialog Strings for MainActivity -->
+    <string name="dialog_title">Coming Soon has moved!</string>
+    <string name="dialog_message">To find out what\'s coming soon, go to Help > Coming Soon</string>
+    <string name="dialog_ok">Okay</string>
+    <string name="dialog_openhelp">Open Help</string>
 
 </resources>

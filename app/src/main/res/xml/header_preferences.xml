@@ -49,4 +49,31 @@
             app:title="@string/updates_header" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        app:title="@string/title_more">
+        <Preference
+            app:fragment="com.nugget.hios.ui.comingsoon.ComingsoonFragment"
+            app:icon="@drawable/ic_moreicon"
+            app:key="comingsoon_header"
+            app:title="@string/title_comingsoon" />
+
+        <Preference
+            app:fragment="com.nugget.hios.ui.support.SupportFragment"
+            app:icon="@drawable/ic_support"
+            app:key="support_header"
+            app:title="@string/title_activity_support" />
+
+        <Preference
+            app:fragment="com.nugget.hios.ui.tc.TcFragment"
+            app:icon="@drawable/ic_aboutapp"
+            app:key="tc_header"
+            app:title="@string/title_activity_tc" />
+
+        <Preference
+            app:fragment="com.nugget.hios.ui.feedback.FeedbackFragment"
+            app:icon="@drawable/ic_feedback"
+            app:key="feedback_header"
+            app:title="@string/title_activity_feedback" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

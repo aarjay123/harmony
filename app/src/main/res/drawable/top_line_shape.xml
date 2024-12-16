@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <shape>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
             <solid android:color="?android:attr/windowBackground" />
             <corners
                 android:topLeftRadius="25dp"
@@ -10,8 +10,8 @@
         </shape>
     </item>
     <item
-        android:bottom="0dp"
-        android:top="28dp">
+        android:bottom="1dp"
+        android:top="26dp">
         <shape>
             <solid android:color="?android:attr/windowBackground" />
         </shape>

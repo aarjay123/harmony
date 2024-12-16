@@ -38,6 +38,9 @@
         <!--Modern popup box theming-->
         <item name="popupMenuBackground">@drawable/custom_popup_background</item>
         <item name="android:actionBarStyle">@android:color/transparent</item>
+        <!--Allowing the modern toolbar to work-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
     <!-- Base application theme. -->
     <style name="Base.Theme.HiOSMobile" parent="Theme.Material3.DayNight.NoActionBar">

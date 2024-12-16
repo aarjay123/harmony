@@ -3,20 +3,26 @@ package com.nugget.hios;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 public class SettingsActivity extends AppCompatActivity implements
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
@@ -35,6 +41,22 @@ public class SettingsActivity extends AppCompatActivity implements
         } else {
             setTitle(savedInstanceState.getCharSequence(TITLE_TAG));
         }
+
+        //setting the toolbar
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        //setting the colour of the toolbar to be the same as the colour of the statusbar
+        int statusBarColour = getWindow().getStatusBarColor();
+        toolbar.setBackgroundColor(statusBarColour);
+
+        //setting the settings pages background colour to be the same as the statusbar for consistency
+        FrameLayout settingsLayout = findViewById(R.id.settings);
+        settingsLayout.setBackgroundColor(statusBarColour);
+
+        //setting the system navbar colour to be the same as the statusbar
+        getWindow().setNavigationBarColor(statusBarColour);
+
         getSupportFragmentManager().addOnBackStackChangedListener(
                 new FragmentManager.OnBackStackChangedListener() {
                     @Override
