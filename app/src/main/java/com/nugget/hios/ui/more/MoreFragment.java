@@ -21,8 +21,6 @@ public class MoreFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        MoreViewModel moreViewModel =
-                new ViewModelProvider(this).get(MoreViewModel.class);
 
         binding = FragmentMoreBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

@@ -19,7 +19,6 @@ import com.nugget.hios.databinding.FragmentSupportBinding;
 
 public class SupportFragment extends Fragment {
 
-    private SupportViewModel mViewModel;
     private FragmentSupportBinding binding;
 
     public static SupportFragment newInstance() {
@@ -29,7 +28,6 @@ public class SupportFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(SupportViewModel.class);
     }
 
     @Nullable

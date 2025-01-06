@@ -2,6 +2,8 @@ package com.nugget.hios;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -21,7 +23,9 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.preference.PreferenceManager;
 
+import com.google.android.material.navigationrail.NavigationRailView;
 import com.google.firebase.FirebaseApp;
 import com.nugget.hios.databinding.ActivityMainBinding;
 
@@ -29,13 +33,14 @@ import org.imaginativeworld.oopsnointernet.callbacks.ConnectionCallback;
 import org.imaginativeworld.oopsnointernet.dialogs.pendulum.DialogPropertiesPendulum;
 import org.imaginativeworld.oopsnointernet.dialogs.pendulum.NoInternetDialogPendulum;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        updateNavigationMode();
 
         //Initialize Firebase
         FirebaseApp.initializeApp(this);
@@ -71,17 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
         builder.build();
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        MaterialToolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setElevation(0);
-
-        //setting the colour of the toolbar to be the same as the colour of the statusbar
-        int statusBarColour = getWindow().getStatusBarColor();
-        toolbar.setBackgroundColor(statusBarColour);
-
         //setting the system navbar colour to be the same as the bottom nav bar
         TypedValue typedValue = new TypedValue();
         getTheme().resolveAttribute(android.R.attr.windowBackground, typedValue, true);
@@ -89,15 +83,143 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().setNavigationBarColor(windowBackgroundColor);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_settings)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        //Register preference change listener
+        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (key.equals("nav_mode")) {
+            updateNavigationMode();
+        }
+    }
+
+    private void updateNavigationMode() {
+        String navigationMode = PreferenceManager.getDefaultSharedPreferences(this).getString("nav_mode", "auto");
+
+        boolean isTablet = getResources().getBoolean(R.bool.isTablet);
+        boolean isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+
+        if (navigationMode.equals("auto")) {
+            if (isTablet || isLandscape) {
+                setContentView(R.layout.activity_main_rail);
+
+                MaterialToolbar toolbar = findViewById(R.id.toolbar);
+                setSupportActionBar(toolbar);
+
+                toolbar.setElevation(0);
+
+                //setting the colour of the toolbar to be the same as the colour of the statusbar
+                int statusBarColour = getWindow().getStatusBarColor();
+                toolbar.setBackgroundColor(statusBarColour);
+
+                //Initialise NavigationRailView
+                NavigationRailView navigationRailView = findViewById(R.id.navigation_rail);
+
+                //Passing each menu ID as a set of Ids because each
+                //menu should be considered as top level destinations.
+                AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                        R.id.navigation_home,
+                        R.id.navigation_dashboard,
+                        R.id.navigation_notifications,
+                        R.id.navigation_settings
+                ).build();
+
+                NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+                NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+                //Setup navigation with NavigationRailView
+                NavigationUI.setupWithNavController(navigationRailView, navController);
+            } else {
+                binding = ActivityMainBinding.inflate(getLayoutInflater());
+                setContentView(binding.getRoot());
+
+                MaterialToolbar toolbar = findViewById(R.id.toolbar);
+                setSupportActionBar(toolbar);
+
+                toolbar.setElevation(0);
+
+                //setting the colour of the toolbar to be the same as the colour of the statusbar
+                int statusBarColour = getWindow().getStatusBarColor();
+                toolbar.setBackgroundColor(statusBarColour);
+
+                //Initialise BottomNavigationView
+                BottomNavigationView navView = findViewById(R.id.nav_view);
+
+                //Passing each menu ID as a set of Ids because each
+                //menu should be considered as top level destinations.
+                AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                        R.id.navigation_home,
+                        R.id.navigation_dashboard,
+                        R.id.navigation_notifications,
+                        R.id.navigation_settings
+                ).build();
+
+                NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+                NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+                //Setup navigation with BottomNavigationView
+                NavigationUI.setupWithNavController(binding.navView, navController);
+            }
+        } else if (navigationMode.equals("bottom")) {
+            setContentView(R.layout.activity_main);
+
+            MaterialToolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+
+            toolbar.setElevation(0);
+
+            //setting the colour of the toolbar to be the same as the colour of the statusbar
+            int statusBarColour = getWindow().getStatusBarColor();
+            toolbar.setBackgroundColor(statusBarColour);
+
+            //Initialise BottomNavigationView
+            BottomNavigationView navView = findViewById(R.id.nav_view);
+
+            //Passing each menu ID as a set of Ids because each
+            //menu should be considered as top level destinations.
+            AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                    R.id.navigation_home,
+                    R.id.navigation_dashboard,
+                    R.id.navigation_notifications,
+                    R.id.navigation_settings
+            ).build();
+
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+            NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+            //Setup navigation with BottomNavigationView
+            NavigationUI.setupWithNavController(binding.navView, navController);
+        } else if (navigationMode.equals("rail")) {
+            setContentView(R.layout.activity_main_rail);
+
+            MaterialToolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+
+            toolbar.setElevation(0);
+
+            //setting the colour of the toolbar to be the same as the colour of the statusbar
+            int statusBarColour = getWindow().getStatusBarColor();
+            toolbar.setBackgroundColor(statusBarColour);
+
+            //Initialise NavigationRailView
+            NavigationRailView navigationRailView = findViewById(R.id.navigation_rail);
+
+            //Passing each menu ID as a set of Ids because each
+            //menu should be considered as top level destinations.
+            AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                    R.id.navigation_home,
+                    R.id.navigation_dashboard,
+                    R.id.navigation_notifications,
+                    R.id.navigation_settings
+            ).build();
+
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+            NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+            //Setup navigation with NavigationRailView
+            NavigationUI.setupWithNavController(navigationRailView, navController);
+        }
     }
 
     //SHOW TOOLBAR THREE DOT ICON

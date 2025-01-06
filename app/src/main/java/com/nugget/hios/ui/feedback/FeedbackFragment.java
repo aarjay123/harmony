@@ -19,7 +19,6 @@ import com.nugget.hios.databinding.FragmentFeedbackBinding;
 
 public class FeedbackFragment extends Fragment {
 
-    private FeedbackViewModel mViewModel;
     private FragmentFeedbackBinding binding;
 
     public static FeedbackFragment newInstance() {
@@ -29,7 +28,6 @@ public class FeedbackFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(FeedbackViewModel.class);
     }
 
     @Nullable

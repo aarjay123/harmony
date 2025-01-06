@@ -54,6 +54,8 @@
     <string name="download_menus">Download Menus</string>
 
     <!-- Settings Titles -->
+    <string name="appearance_header">Appearance</string>
+
     <string name="updates_header">Updates</string>
 
     <string name="apps_header">Apps and Services</string>
@@ -66,6 +68,26 @@
 
     <string name="privacy_title">Your Privacy</string>
     <string name="privacypolicy_header">Privacy Policy</string>
+
+    <!-- Appearance Preferences -->
+    <string name="nav_category">App Navigation</string>
+
+    <string name="nav_title">Change HiOSMobile Navigation Bar</string>
+
+    <string-array name="nav_modes">
+        <item>Auto</item>
+        <item>Bottom Navigation</item>
+        <item>Navigation Rail</item>
+    </string-array>
+
+    <string-array name="nav_modes_values">
+        <item>auto</item>
+        <item>bottom</item>
+        <item>rail</item>
+    </string-array>
+
+    <string name="colour_category">App Colours</string>
+
 
     <!-- Updates Preferences -->
     <string name="update_category">Update HiOSMobile</string>

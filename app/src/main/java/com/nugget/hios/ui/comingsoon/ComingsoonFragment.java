@@ -10,15 +10,12 @@ import android.webkit.WebViewClient;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.nugget.hios.R;
 import com.nugget.hios.databinding.FragmentSupportBinding;
-import com.nugget.hios.ui.support.SupportViewModel;
 
 public class ComingsoonFragment extends Fragment {
 
-    private SupportViewModel mViewModel;
     private FragmentSupportBinding binding;
 
     public static ComingsoonFragment newInstance() {
@@ -28,7 +25,6 @@ public class ComingsoonFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(SupportViewModel.class);
     }
 
     @Nullable
