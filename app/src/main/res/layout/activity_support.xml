@@ -14,5 +14,5 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:visibility="visible"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="50dp" />
 </FrameLayout>
