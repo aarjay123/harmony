@@ -28,12 +28,6 @@
                     android:onClick="settings" />
 
                 <item
-                    android:id="@+id/topmenuComingsoon"
-                    android:title="@string/title_comingsoon"
-                    android:icon="@drawable/ic_moreicon"
-                    android:onClick="comingsoon" />
-
-                <item
                     android:id="@+id/topmenuHelp"
                     android:title="@string/title_activity_help"
                     android:icon="@drawable/ic_help"

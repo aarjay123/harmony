@@ -93,7 +93,7 @@
     <string name="update_category">Update HiOSMobile</string>
 
     <string name="updates_title">Manually Update HiOSMobile</string>
-    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.6</string>
+    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.6.1</string>
     <string name="updates_description">Tap the button below to download the latest HiOSMobile version to your Downloads folder.</string>
     <string name="updates_button">Download HiOSMobile File</string>
 
@@ -120,8 +120,8 @@
     <string name="hirewards_title">HiRewards</string>
     <string name="hirewards_summary">Wanting to earn rewards for visiting your favourite brands by The Highland Cafe™? No probs, as you can now download HiRewards on your smartphone!</string>
 
-    <string name="nuggetdev_apps_title">Other software by nuggetdev</string>
-    <string name="nuggetdev_apps_summary">Take a look at other great apps, software, and services also by nuggetdev!</string>
+    <string name="nuggetdev_apps_title">Other software by HiDev</string>
+    <string name="nuggetdev_apps_summary">Take a look at other great apps, software, and services also by HiDev!</string>
 
     <string name="windows">Windows Apps</string>
 
@@ -130,7 +130,7 @@
 
     <!-- Websites Preferences -->
     <string name="hienterprises_title">The Highland Cafe™ Enterprises Website</string>
-    <string name="nuggetdev_website_title">nuggetdev Website</string>
+    <string name="nuggetdev_website_title">HiDev Website</string>
     <string name="hios_title">HiOSMobile Website</string>
     <string name="thehighlandcafe_title">The Highland Cafe™ Website</string>
 
@@ -142,10 +142,10 @@
     <string name="instagram_title">The Highland Cafe™ Enterprises Instagram Profile</string>
     <string name="instagram_summary">\@thehighlandcafe</string>
 
-    <string name="nuggetdev_category">nuggetdev</string>
+    <string name="nuggetdev_category">HiDev</string>
 
-    <string name="facebook_nuggetdev_title">nuggetdev Facebook Page</string>
-    <string name="instagram_nuggetdev_title">nuggetdev Instagram Profile</string>
+    <string name="facebook_nuggetdev_title">HiDev Facebook Page</string>
+    <string name="instagram_nuggetdev_title">HiDev Instagram Profile</string>
     <string name="instagram_nuggetdev_summary">\@nuggetdev</string>
 
     <string name="title_activity_help_center">Help</string>
@@ -165,16 +165,6 @@
 
     <string name="general_title">General Help</string>
 
-    <!-- Notification Stuff -->
-    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
-    <string name="fcm_message">FCM Message</string>
-
     <string name="placeholder">Placeholder Text</string>
-
-    <!-- Coming Soon Alert Dialog Strings for MainActivity -->
-    <string name="dialog_title">Coming Soon has moved!</string>
-    <string name="dialog_message">To find out what\'s coming soon, go to Help > Coming Soon</string>
-    <string name="dialog_ok">Okay</string>
-    <string name="dialog_openhelp">Open Help</string>
 
 </resources>

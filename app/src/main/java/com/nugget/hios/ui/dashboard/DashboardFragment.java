@@ -1,4 +1,5 @@
 package com.nugget.hios.ui.dashboard;
+//RESTAURANT FRAGMENT//
 
 import static android.content.Context.DOWNLOAD_SERVICE;
 
@@ -12,15 +13,15 @@ import android.view.ViewGroup;
 import android.webkit.CookieManager;
 import android.webkit.DownloadListener;
 import android.webkit.URLUtil;
+import android.webkit.WebChromeClient;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 import android.webkit.WebView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
+import com.nugget.hios.MainActivity;
 import com.nugget.hios.R;
 import com.nugget.hios.databinding.FragmentDashboardBinding;
 
@@ -33,8 +34,6 @@ public class DashboardFragment extends Fragment {
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.textDashboard;
 
         WebView webView = (WebView)root.findViewById(R.id.webView);
 
@@ -89,6 +88,21 @@ public class DashboardFragment extends Fragment {
                 dm.enqueue(request);
                 Toast.makeText(getActivity().getApplicationContext(), "Menu downloaded, please check your downloads folder", Toast.LENGTH_LONG).show();
             }});
+
+        //New progress bar indicator
+        MainActivity mainActivity = (MainActivity) getActivity();
+
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                if (newProgress == 100) {
+                    mainActivity.hideProgressBar();
+                } else {
+                    mainActivity.showProgressBar();
+                    mainActivity.setTheProgress(newProgress);
+                }
+            }
+        });
 
         webView.loadUrl("https://thehighlandcafe.github.io/hioswebcore/restaurant.html");
 

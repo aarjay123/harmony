@@ -51,8 +51,8 @@ public class SettingsActivity extends AppCompatActivity implements
         toolbar.setBackgroundColor(statusBarColour);
 
         //setting the settings pages background colour to be the same as the statusbar for consistency
-        /*FrameLayout settingsLayout = findViewById(R.id.settings);
-        settingsLayout.setBackgroundColor(statusBarColour);*/
+        FrameLayout settingsLayout = findViewById(R.id.settings);
+        settingsLayout.setBackgroundColor(statusBarColour);
 
         //setting the system navbar colour to be the same as the statusbar
         getWindow().setNavigationBarColor(statusBarColour);

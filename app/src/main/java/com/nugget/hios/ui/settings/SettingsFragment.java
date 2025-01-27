@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.nugget.hios.MainActivity;
 import com.nugget.hios.R;
 import com.nugget.hios.databinding.FragmentSettingsBinding;
 
@@ -52,6 +54,21 @@ public class SettingsFragment extends Fragment {
                 //view.loadUrl(url);
                 System.out.println("Never gonna give you up");
                 return false;
+            }
+        });
+
+        //New progress bar indicator
+        MainActivity mainActivity = (MainActivity) getActivity();
+
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                if (newProgress == 100) {
+                    mainActivity.hideProgressBar();
+                } else {
+                    mainActivity.showProgressBar();
+                    mainActivity.setTheProgress(newProgress);
+                }
             }
         });
 

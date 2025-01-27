@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.widget.TextView;
 import android.webkit.WebView;
 
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.nugget.hios.MainActivity;
 import com.nugget.hios.R;
 import com.nugget.hios.databinding.FragmentHomeBinding;
 
@@ -23,8 +25,6 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.textHome;
 
         WebView webView = (WebView)root.findViewById(R.id.webView);
 
@@ -44,6 +44,21 @@ public class HomeFragment extends Fragment {
                     break;
             }
         }*/
+
+        //New progress bar indicator
+        MainActivity mainActivity = (MainActivity) getActivity();
+
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                if (newProgress == 100) {
+                    mainActivity.hideProgressBar();
+                } else {
+                    mainActivity.showProgressBar();
+                    mainActivity.setTheProgress(newProgress);
+                }
+            }
+        });
 
         webView.loadUrl("https://thehighlandcafe.github.io/hioswebcore/welcome.html");
 

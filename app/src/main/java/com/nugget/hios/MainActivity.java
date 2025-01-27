@@ -1,6 +1,5 @@
 package com.nugget.hios;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -11,12 +10,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuCompat;
 import androidx.navigation.NavController;
@@ -26,7 +24,6 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.navigationrail.NavigationRailView;
-import com.google.firebase.FirebaseApp;
 import com.nugget.hios.databinding.ActivityMainBinding;
 
 import org.imaginativeworld.oopsnointernet.callbacks.ConnectionCallback;
@@ -36,14 +33,14 @@ import org.imaginativeworld.oopsnointernet.dialogs.pendulum.NoInternetDialogPend
 public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private ActivityMainBinding binding;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         updateNavigationMode();
 
-        //Initialize Firebase
-        FirebaseApp.initializeApp(this);
+        progressBar = findViewById(R.id.activity_progress_bar);
 
         // No Internet Dialog: Pendulum
         NoInternetDialogPendulum.Builder builder = new NoInternetDialogPendulum.Builder(
@@ -246,37 +243,20 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         return true;
     }
 
-    public boolean comingsoon(MenuItem item) {
-        //startActivity(new Intent(MainActivity.this, ComingsoonActivity.class));
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.dialog_message)
-                .setTitle(R.string.dialog_title)
-                .setNegativeButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //user taps Okay button
-                    }
-                })
-                .setPositiveButton(R.string.dialog_openhelp, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        startActivity(new Intent(MainActivity.this, HelpcenterActivity.class));
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-
-        return true;
-    }
-
     public boolean help(MenuItem item) {
         startActivity(new Intent(MainActivity.this, HelpcenterActivity.class));
         return true;
     }
 
-    /*public boolean feedback(MenuItem item) {
-        startActivity(new Intent(MainActivity.this, FeedbackActivity.class));
-        return true;
-    }*/
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    public void setTheProgress(int progress) {
+        progressBar.setProgress(progress);
+    }
 }
