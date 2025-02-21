@@ -93,7 +93,7 @@
     <string name="update_category">Update HiOSMobile</string>
 
     <string name="updates_title">Manually Update HiOSMobile</string>
-    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.6.1.1</string>
+    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.6.1.2</string>
     <string name="updates_description">Tap the button below to download the latest HiOSMobile version to your Downloads folder.</string>
     <string name="updates_button">Download HiOSMobile File</string>
 
