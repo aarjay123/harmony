@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.URLUtil;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -47,15 +49,22 @@ public class SettingsActivity extends AppCompatActivity implements
         setSupportActionBar(toolbar);
 
         //setting the colour of the toolbar to be the same as the colour of the statusbar
-        int statusBarColour = getWindow().getStatusBarColor();
-        toolbar.setBackgroundColor(statusBarColour);
+        //int statusBarColour = getWindow().getStatusBarColor();
+        //toolbar.setBackgroundColor(statusBarColour);
+
+        //setting the colour of the status bar to always be the same as the toolbar.
+        Window window = this.getWindow();
+
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(toolbar.getDrawingCacheBackgroundColor());
 
         //setting the settings pages background colour to be the same as the statusbar for consistency
-        FrameLayout settingsLayout = findViewById(R.id.settings);
-        settingsLayout.setBackgroundColor(statusBarColour);
+        //FrameLayout settingsLayout = findViewById(R.id.settings);
+        //settingsLayout.setBackgroundColor(statusBarColour);
 
         //setting the system navbar colour to be the same as the statusbar
-        getWindow().setNavigationBarColor(statusBarColour);
+        //getWindow().setNavigationBarColor(statusBarColour);
 
         getSupportFragmentManager().addOnBackStackChangedListener(
                 new FragmentManager.OnBackStackChangedListener() {
