@@ -196,6 +196,13 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         return true;
     }
 
+    public boolean visitBlog(MenuItem item) {
+        Uri uri = Uri.parse("https://hienterprises.blogspot.com");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+        return true;
+    }
+
     public void showProgressBar() {
         progressBar.setVisibility(View.VISIBLE);
     }

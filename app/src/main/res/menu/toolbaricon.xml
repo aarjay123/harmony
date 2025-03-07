@@ -34,6 +34,17 @@
                     android:onClick="help" />
 
             </group>
+
+            <group
+                android:id="@+id/toolbaricon_4">
+
+                <item
+                    android:id="@+id/topmenuBlog"
+                    android:title="@string/visit_blog"
+                    android:icon="@drawable/blog"
+                    android:onClick="visitBlog" />
+
+            </group>
         </menu>
     </item>
 </menu>
