@@ -1,5 +1,7 @@
 package com.nugget.hios;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -37,6 +39,23 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
     private ActivityMainBinding binding;
     private ProgressBar progressBar;
+
+    /*private BroadcastReceiver widgetReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action != null) {
+                switch (action) {
+                    case .ACTION_HOME: {
+
+                    }
+                        break;
+                    }
+                    case WidgetProvider.ACTION_RESTAURANT: {
+                }
+            }
+        }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
