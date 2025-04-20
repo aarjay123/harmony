@@ -6,7 +6,7 @@
     android:padding="8dp"
     android:background="@drawable/widget_background"
     android:theme="@style/Theme.Material3.DynamicColors.DayNight" >
-
+    
     <TextView
         android:id="@+id/widget_title"
         android:layout_width="wrap_content"
@@ -15,12 +15,44 @@
         android:text="@string/app_name"
         android:textSize="16sp"
         android:textColor="?attr/colorOnSurfaceVariant" />
-
-    <Button
-        android:id="@+id/widget_button"
-        android:layout_width="wrap_content"
+    
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/app_name" />
+        android:orientation="horizontal"
+        android:gravity="center">
 
+        <ImageButton
+            android:id="@+id/widget_button_home"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_home_outline"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/title_home" />
+
+        <ImageButton
+            android:id="@+id/widget_button_restaurant"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_restauranticon"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/title_dashboard" />
+
+        <ImageButton
+            android:id="@+id/widget_button_hotel"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_hotel_outline"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/title_notifications" />
+
+        <ImageButton
+            android:id="@+id/widget_button_roomkey"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_keyicon"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/title_roomkey" />
+
+    </LinearLayout>
 </LinearLayout>

@@ -1,53 +1,46 @@
-package com.nugget.hios.widget;
-
-import android.app.PendingIntent;
+/*import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
 
-import com.nugget.hios.MainActivity;
 import com.nugget.hios.R;
 
 public class WidgetProvider extends AppWidgetProvider {
 
+    public static final String ACTION_HOME = "com.nugget.hios.ui.home.HomeFragment";
+    public static final String ACTION_RESTAURANT = "com.nugget.hios.ui.dashboard.DashboardFragment";
+    public static final String ACTION_HOTEL = "com.nugget.hios.ui.notifications.NotificationsFragment";
+    public static final String ACTION_ROOMKEY = "com.nugget.hios.ui.settings.SettingsFragment";
+
     @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+    public void onUpdate(Context context, AppWidgetProvider appWidgetProvider, int[] appWidgetIds) {
         for (int appWidgetId : appWidgetIds) {
-            updateAppWidget(context, appWidgetManager, appWidgetId);
+            updateAppWidget(context, appWidgetProvider, appWidgetId);
         }
     }
 
-    private void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
-        CharSequence widgetText = context.getString(R.string.app_name);
-        CharSequence buttonText = context.getString(R.string.app_name);
-
-        //Construct RemoteViews object
+    static void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
 
-        //Set text to widget
-        views.setTextViewText(R.id.widget_title, widgetText);
-        views.setTextViewText(R.id.widget_button, buttonText);
+        //PendingIntents
+        Intent homeIntent = new Intent(ACTION_HOME);
+        PendingIntent homePendingIntent = PendingIntent.getBroadcast(context, 0, homeIntent, PendingIntent.FLAG_IMMUTABLE);
+        views.setOnClickPendingIntent(R.id.widget_button_home, homePendingIntent);
 
-        //Create intent to launch when the button is clicked
-        Intent intent = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+        Intent restaurantIntent = new Intent(ACTION_RESTAURANT);
+        PendingIntent restaurantPendingIntent = PendingIntent.getBroadcast(context, 0, restaurantIntent, PendingIntent.FLAG_IMMUTABLE);
+        views.setOnClickPendingIntent(R.id.widget_button_restaurant, restaurantPendingIntent);
 
-        //Set the click listener for the button
-        views.setOnClickPendingIntent(R.id.widget_button, pendingIntent);
+        Intent hotelIntent = new Intent(ACTION_HOTEL);
+        PendingIntent hotelPendingIntent = PendingIntent.getBroadcast(context, 0, hotelIntent, PendingIntent.FLAG_IMMUTABLE);
+        views.setOnClickPendingIntent(R.id.widget_button_hotel, hotelPendingIntent);
 
-        //Instruct the widget manager to update the widget
+        Intent roomkeyIntent = new Intent(ACTION_ROOMKEY);
+        PendingIntent roomkeyPendingIntent = PendingIntent.getBroadcast(context, 0, roomkeyIntent, PendingIntent.FLAG_IMMUTABLE);
+        views.setOnClickPendingIntent(R.id.widget_button_roomkey, roomkeyPendingIntent);
+
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
-
-    @Override
-    public void onEnabled(Context context) {
-        //relevant actions for when first widget created
-    }
-
-    @Override
-    public void onDisabled(Context context) {
-        //relevant actions for when last widget removed
-    }
-}
+}*/

@@ -18,14 +18,14 @@
     <string name="recommended">Recommended</string>
 
     <!-- URLs -->
-    <string name="updates_url" translatable="false">https://sites.google.com/view/hios-by-thc/download#h.51zx1qe3xfrl</string>
+    <string name="updates_url" translatable="false">https://hienterprises.github.io/hiosmobile/download</string>
     <string name="autoupdate_url">https://sites.google.com/view/hios-by-thc/download/autoupdate</string>
     <string name="whatsnew_url" translatable="false">https://sites.google.com/view/hios-by-thc/download#h.evwm3pfxwkdn</string>
     <string name="notifications_url" translatable="false">https://whatsapp.com/channel/0029Va8U5lXISTkDAhk4bj3J</string>
     <string name="hiosmusic_url" translatable="false">https://sites.google.com/view/hios-by-thc/download-hiosmusic#h.ogr0r3hzljpf</string>
     <string name="hiosweather_url" translatable="false">https://sites.google.com/view/hios-by-thc/hiosweather#h.rynyo42t0yud</string>
     <string name="hiosdesktop_url">https://sites.google.com/view/hios-by-thc/hiosdesktop</string>
-    <string name="hienterprises_url" translatable="false">https://sites.google.com/view/thehighlandcafe</string>
+    <string name="hienterprises_url" translatable="false">https://hienterprises.github.io</string>
     <string name="support_url" translatable="false">https://sites.google.com/view/thehighlandcafe/customer-support</string>
 
     <string name="facebook_url">https://www.facebook.com/profile.php?id=100095224335357</string>
@@ -35,9 +35,9 @@
     <string name="instagram_nuggetdev_url">https://www.instagram.com/nuggetdev/</string>
 
     <string name="threads_url">https://www.threads.net/@thehighlandcafe</string>
-    <string name="thehighlandcafe_url">https://sites.google.com/view/hicafe</string>
+    <string name="thehighlandcafe_url">https://hienterprises.github.io/hicafe/home</string>
     <string name="nuggetdev_url">https://sites.google.com/view/nuggetdev</string>
-    <string name="hios_url">https://sites.google.com/view/hios-by-thc</string>
+    <string name="hios_url">https://hienterprises.github.io/hiosmobile/home</string>
     <string name="hiossocial_url">https://sites.google.com/view/hios-by-thc/hisocial</string>
     <string name="privacypolicy_url">https://sites.google.com/view/hios-by-thc/privacy-policy</string>
     <string name="github_release_url">https://github.com/aarjay123/harmony/releases/latest</string>
@@ -94,7 +94,7 @@
     <string name="update_category">Update HiOSMobile</string>
 
     <string name="updates_title">Manually Update HiOSMobile</string>
-    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.6.1.4</string>
+    <string name="updates_summary">Download the latest app APK installer file.\n\n1. Tap here, tap \'Download Anyway\' on the popup, since HiOSMobile is safe.\n2. Allow your browser to \'Install Unknown Apps\', select \'Open\' and finally \'update\'.\n\nThis Version: 2.6.1.5</string>
     <string name="updates_description">Tap the button below to download the latest HiOSMobile version to your Downloads folder.</string>
     <string name="updates_button">Download HiOSMobile File</string>
 

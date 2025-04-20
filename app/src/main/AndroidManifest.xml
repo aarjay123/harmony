@@ -52,7 +52,7 @@
         </activity>
 
         <!--Code for the upcoming HiOSMobile widget-->
-        <!--receiver
+        <!--<receiver
             android:name=".widget.WidgetProvider"
             android:exported="false" >
 
@@ -63,7 +63,7 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
-        </receiver-->
+        </receiver>-->
 
     </application>
 
