@@ -20,7 +20,8 @@
     <!-- URLs -->
     <string name="updates_url" translatable="false">https://hienterprises.github.io/hiosmobile/download</string>
     <string name="autoupdate_url">https://sites.google.com/view/hios-by-thc/download/autoupdate</string>
-    <string name="whatsnew_url" translatable="false">https://sites.google.com/view/hios-by-thc/download#h.evwm3pfxwkdn</string>
+    <string name="whatsnew_url_old" translatable="false">https://sites.google.com/view/hios-by-thc/download#h.evwm3pfxwkdn</string>
+    <string name="whatsnew_url">https://discord.gg/EDykxqwy</string>
     <string name="notifications_url" translatable="false">https://whatsapp.com/channel/0029Va8U5lXISTkDAhk4bj3J</string>
     <string name="hiosmusic_url" translatable="false">https://sites.google.com/view/hios-by-thc/download-hiosmusic#h.ogr0r3hzljpf</string>
     <string name="hiosweather_url" translatable="false">https://sites.google.com/view/hios-by-thc/hiosweather#h.rynyo42t0yud</string>
