@@ -1,4 +1,4 @@
-package com.nugget.hios.ui.home;
+package com.nugget.hios.ui.preferences;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,28 +9,28 @@ import android.view.ViewGroup;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.nugget.hios.MainActivity;
 import com.nugget.hios.R;
-import com.nugget.hios.databinding.FragmentHomeBinding;
+import com.nugget.hios.databinding.FragmentRestauranthelpBinding;
 
-public class HomeFragment extends Fragment {
+public class AppearanceFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentRestauranthelpBinding binding;
     private ValueCallback<Uri[]> fileChooserCallback;
     private final int FILE_CHOOSER_REQUEST_CODE = 1;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentRestauranthelpBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        WebView webView = (WebView) root.findViewById(R.id.webView);
+        WebView webView = (WebView)root.findViewById(R.id.webView);
 
         webView.setInitialScale(1);
         webView.getSettings().setJavaScriptEnabled(true);
@@ -43,32 +43,41 @@ public class HomeFragment extends Fragment {
 
         // Set the WebChromeClient only once
         webView.setWebChromeClient(new WebChromeClient() {
-            // For Android 5.0+
-            @Override
-            public boolean onShowFileChooser(WebView webview, ValueCallback<Uri[]> filePathCallBack, FileChooserParams fileChooserParams) {
-                fileChooserCallback = filePathCallBack;
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                intent.setType("image/*");
-                startActivityForResult(intent, FILE_CHOOSER_REQUEST_CODE);
-                return true;
-            }
+                                       // For Android 5.0+
+                                       @Override
+                                       public boolean onShowFileChooser(WebView webview, ValueCallback<Uri[]> filePathCallBack, FileChooserParams fileChooserParams) {
+                                           fileChooserCallback = filePathCallBack;
+                                           Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                                           intent.addCategory(Intent.CATEGORY_OPENABLE);
+                                           intent.setType("image/*");
+                                           startActivityForResult(intent, FILE_CHOOSER_REQUEST_CODE);
+                                           return true;
+                                       }
+                                   });
 
+
+        /*if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+            switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+                case Configuration .UI_MODE_NIGHT_YES:
+                case Configuration.UI_MODE_NIGHT_NO:
+                case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                    WebRestaurantCompat.setForceDark(webView.getRestaurant(), FORCE_DARK_ON);
+                    break;
+            }
+        }*/
+
+        webView.setWebViewClient(new WebViewClient()
+        {
             @Override
-            public void onProgressChanged(WebView view, int newProgress) {
-                MainActivity mainActivity = (MainActivity) getActivity();
-                if (mainActivity != null) {
-                    if (newProgress == 100) {
-                        mainActivity.hideProgressBar();
-                    } else {
-                        mainActivity.showProgressBar();
-                        mainActivity.setTheProgress(newProgress);
-                    }
-                }
+            public boolean shouldOverrideUrlLoading(WebView view, String url)
+            {
+                //view.loadUrl(url);
+                System.out.println("Never gonna give you up");
+                return false;
             }
         });
 
-        webView.loadUrl("https://thehighlandcafe.github.io/hioswebcore/welcome.html");
+        webView.loadUrl("https://thehighlandcafe.github.io/hioswebcore/activities/settingsActivity/settings_activities/appearance_activity.html");
 
         return root;
     }
