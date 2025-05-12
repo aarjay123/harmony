@@ -92,13 +92,13 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         properties.setNoInternetConnectionTitle("No Internet"); // Optional
         properties.setNoInternetConnectionMessage("Check your network connection and try again"); // Optional
         properties.setShowInternetOnButtons(true); // Optional
-        properties.setPleaseTurnOnText("Please switch on"); // Optional
-        properties.setWifiOnButtonText("WiFi"); // Optional
-        properties.setMobileDataOnButtonText("Mobile Data"); // Optional
+        properties.setPleaseTurnOnText("Please turn on"); // Optional
+        properties.setWifiOnButtonText("Wi-Fi"); // Optional
+        properties.setMobileDataOnButtonText("Mobile data"); // Optional
 
         properties.setOnAirplaneModeTitle("No Internet"); // Optional
         properties.setOnAirplaneModeMessage("Aeroplane mode is switched on"); // Optional
-        properties.setPleaseTurnOffText("Please switch off"); // Optional
+        properties.setPleaseTurnOffText("Please turn off"); // Optional
         properties.setAirplaneModeOffButtonText("Aeroplane mode"); // Optional
         properties.setShowAirplaneModeOffButtons(true); // Optional
 
