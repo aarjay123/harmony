@@ -24,6 +24,14 @@
         android:theme="@style/Theme.HiOSMobile"
         tools:targetApi="35">
         <activity
+            android:name=".HiClubSettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.nugget.hios.MainActivity" />
+        </activity>
+        <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings">

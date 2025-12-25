@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     public boolean settings(MenuItem item) {
-        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+        startActivity(new Intent(MainActivity.this, HiClubSettingsActivity.class));
         return true;
     }
 
