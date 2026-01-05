@@ -1,47 +1,48 @@
 package com.nugget.hios;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.nugget.hios.ui.hiclubsettings.HomeSettingsFragment;
+import com.nugget.hios.ui.hiclubsettings.UpdatesSettingsFragment;
+import com.nugget.hios.ui.preferences.AboutFragment;
 import com.nugget.hios.ui.preferences.AppearanceFragment;
+import com.nugget.hios.ui.preferences.PrivacypolicyFragment;
 
-// We use standard AppCompatActivity because we are not using PreferenceFragments here.
 public class HiClubSettingsActivity extends AppCompatActivity {
+
     private CollapsingToolbarLayout collapsingToolbar;
     private AppBarLayout appBarLayout;
 
-    //helper to help loading fragments
+    private static final String TITLE_HOME = "Preferences";
+
+    // Helper to load sub-pages
     private void loadFragment(Fragment fragment, String title) {
         getSupportFragmentManager().beginTransaction()
-                //animation for nice entry
-                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out, android.R.anim.fade_in, android.R.anim.fade_out)
-                //replace settings container content with new fragment
+                .setCustomAnimations(
+                        android.R.anim.fade_in, android.R.anim.fade_out,
+                        android.R.anim.fade_in, android.R.anim.fade_out
+                )
                 .replace(R.id.settings_container, fragment)
-                //add back stack so back button works
-                .addToBackStack(null)
+                .addToBackStack(title)   // store title for back navigation
                 .commit();
 
-        //updating the title
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(title);
-        }
+        collapsingToolbar.setTitle(title);
+        appBarLayout.setExpanded(false, true);
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hiclub_settings);
 
-        // 1. Setup Toolbar
+        // Toolbar setup
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -50,39 +51,48 @@ public class HiClubSettingsActivity extends AppCompatActivity {
 
         appBarLayout = findViewById(R.id.appbar);
         collapsingToolbar = findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle("Preferences");
+        collapsingToolbar.setTitle(TITLE_HOME);
 
+        // Load the home fragment once
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.settings_container, new HomeSettingsFragment())
+                    .commit();
+        }
+
+        // Keep title in sync with back stack
         getSupportFragmentManager().addOnBackStackChangedListener(() -> {
-            if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
-                collapsingToolbar.setTitle("Preferences");
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if (count == 0) {
+                collapsingToolbar.setTitle(TITLE_HOME);
                 appBarLayout.setExpanded(true, true);
+            } else {
+                String title = getSupportFragmentManager()
+                        .getBackStackEntryAt(count - 1)
+                        .getName();
+                collapsingToolbar.setTitle(title);
+                appBarLayout.setExpanded(false, true);
             }
         });
+    }
 
-        // 2. Setup Manual Click Listeners
-        // Appearance
-        findViewById(R.id.btn_appearance).setOnClickListener(v -> {
-            loadFragment(new AppearanceFragment(), "Appearance");
-            appBarLayout.setExpanded(false, true);
-        });
+    // --- Called from PreferencesHomeFragment ---
 
-        // Websites
-        LinearLayout btnWebsites = findViewById(R.id.btn_websites);
-        btnWebsites.setOnClickListener(v -> {
-            Toast.makeText(this, "Opening Websites...", Toast.LENGTH_SHORT).show();
-        });
+    public void openAppearance() {
+        loadFragment(new AppearanceFragment(), "Appearance");
+    }
 
-        // Apps
-        LinearLayout btnApps = findViewById(R.id.btn_apps);
-        btnApps.setOnClickListener(v -> {
-            Toast.makeText(this, "Opening Apps...", Toast.LENGTH_SHORT).show();
-        });
+    public void openUpdates() {
+        loadFragment(new UpdatesSettingsFragment(), "Updates");
+    }
 
-        // Socials
-        LinearLayout btnSocials = findViewById(R.id.btn_socials);
-        btnSocials.setOnClickListener(v -> {
-            Toast.makeText(this, "Opening Socials...", Toast.LENGTH_SHORT).show();
-        });
+    public void openAbout() {
+        loadFragment(new AboutFragment(), "About HiClub");
+    }
+
+    public void openPrivacyPolicy() {
+        loadFragment(new PrivacypolicyFragment(), "Privacy Policy");
     }
 
     @Override
@@ -90,7 +100,6 @@ public class HiClubSettingsActivity extends AppCompatActivity {
         if (getSupportFragmentManager().popBackStackImmediate()) {
             return true;
         }
-
         finish();
         return true;
     }

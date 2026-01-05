@@ -32,7 +32,10 @@
                     android:title="@string/title_activity_help"
                     android:icon="@drawable/ic_help"
                     android:onClick="help" />
-
+                <item
+                    android:id="@+id/legacySettings"
+                    android:title="legacySettings"
+                    android:onClick="legacySettings" />
             </group>
 
             <group

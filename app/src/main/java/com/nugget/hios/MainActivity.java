@@ -1,30 +1,18 @@
 package com.nugget.hios;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.Menu;
-
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.core.widget.TextViewCompat;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toolbar;
-
-import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuCompat;
@@ -34,15 +22,16 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigationrail.NavigationRailView;
 import com.nugget.hios.databinding.ActivityMainBinding;
 
 import org.imaginativeworld.oopsnointernet.callbacks.ConnectionCallback;
 import org.imaginativeworld.oopsnointernet.dialogs.pendulum.DialogPropertiesPendulum;
 import org.imaginativeworld.oopsnointernet.dialogs.pendulum.NoInternetDialogPendulum;
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Field;
 
 public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -71,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         super.onCreate(savedInstanceState);
         updateNavigationMode();
 
+        // Note: ProgressBar was removed from activity_main.xml (Phone Layout),
+        // so this might be null in phone mode. It should be handled with null checks.
         progressBar = findViewById(R.id.activity_progress_bar);
 
         // No Internet Dialog: Pendulum
@@ -159,43 +150,56 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             binding = ActivityMainBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
 
-            MaterialToolbar toolbar = findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
+            // --- Updated for FAB Menu Logic (No Toolbar) ---
 
-            toolbar.setElevation(0);
-
-            //setting the colour of the toolbar to be the same as the colour of the statusbar
-            //int statusBarColour = getWindow().getStatusBarColor();
-            //toolbar.setBackgroundColor(statusBarColour);
-
-            //setting the colour of the status bar to always be the same as the toolbar.
-            Window window = this.getWindow();
-
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(toolbar.getDrawingCacheBackgroundColor());
-
-            //Initialise BottomNavigationView
-            BottomNavigationView navView = findViewById(R.id.nav_view);
-
-            //Passing each menu ID as a set of Ids because each
-            //menu should be considered as top level destinations.
-            AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.navigation_home,
-                    R.id.navigation_dashboard,
-                    R.id.navigation_notifications,
-                    R.id.navigation_settings
-            ).build();
+            // Set up Floating Action Button for the Menu
+            FloatingActionButton fab = findViewById(R.id.fab_menu);
+            if (fab != null) {
+                fab.setOnClickListener(this::showFabMenu);
+            }
 
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-            NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+            // No ActionBar setup needed since we removed the Toolbar
 
             //Setup navigation with BottomNavigationView
             NavigationUI.setupWithNavController(binding.navView, navController);
         }
     }
 
-    //SHOW TOOLBAR THREE DOT ICON
+    private void showFabMenu(View v) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        View sheetView = getLayoutInflater().inflate(R.layout.layout_menu_bottom_sheet, null);
+        bottomSheetDialog.setContentView(sheetView);
+
+        sheetView.findViewById(R.id.topmenuDownloadmenus).setOnClickListener(view -> {
+            downloadmenus(null);
+            bottomSheetDialog.dismiss();
+        });
+
+        sheetView.findViewById(R.id.topmenuSettings).setOnClickListener(view -> {
+            settings(null);
+            bottomSheetDialog.dismiss();
+        });
+
+        sheetView.findViewById(R.id.topmenuHelp).setOnClickListener(view -> {
+            help(null);
+            bottomSheetDialog.dismiss();
+        });
+
+        sheetView.findViewById(R.id.legacySettings).setOnClickListener(view -> {
+            legacySettings(null);
+            bottomSheetDialog.dismiss();
+        });
+
+        sheetView.findViewById(R.id.topmenuBlog).setOnClickListener(view -> {
+            visitBlog(null);
+            bottomSheetDialog.dismiss();
+        });
+
+        bottomSheetDialog.show();
+    }
+
+    //SHOW TOOLBAR THREE DOT ICON (Still used for Tablet/Rail mode)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -206,9 +210,9 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         return super.onCreateOptionsMenu(menu);
     }
 
-    //ONCLICK LISTENERS GOING TO PAGES ON TOOLBAR POPUP
+    //ONCLICK LISTENERS GOING TO PAGES ON TOOLBAR/POPUP
     public boolean downloadmenus(MenuItem item) {
-        Uri uri = Uri.parse("https://www.dropbox.com/scl/fo/7gmlnnjcau1np91ee83ht/h?rlkey=ifj506k3aal7ko7tfecy8oqyq&dl=0");
+        Uri uri = Uri.parse("https://github.com/aarjay123/harmonyapp/releases/latest");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
         return true;
@@ -216,6 +220,11 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
     public boolean settings(MenuItem item) {
         startActivity(new Intent(MainActivity.this, HiClubSettingsActivity.class));
+        return true;
+    }
+
+    public boolean legacySettings(MenuItem item) {
+        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
         return true;
     }
 
@@ -232,14 +241,14 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     public void showProgressBar() {
-        progressBar.setVisibility(View.VISIBLE);
+        if (progressBar != null) progressBar.setVisibility(View.VISIBLE);
     }
 
     public void hideProgressBar() {
-        progressBar.setVisibility(View.GONE);
+        if (progressBar != null) progressBar.setVisibility(View.GONE);
     }
 
     public void setTheProgress(int progress) {
-        progressBar.setProgress(progress);
+        if (progressBar != null) progressBar.setProgress(progress);
     }
 }
