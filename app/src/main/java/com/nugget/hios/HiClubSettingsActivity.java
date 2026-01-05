@@ -9,8 +9,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.nugget.hios.ui.hiclubsettings.HomeSettingsFragment;
-import com.nugget.hios.ui.hiclubsettings.UpdatesSettingsFragment;
+import com.nugget.hios.ui.common.GenericLayoutFragment;
 import com.nugget.hios.ui.preferences.AboutFragment;
 import com.nugget.hios.ui.preferences.AppearanceFragment;
 import com.nugget.hios.ui.preferences.PrivacypolicyFragment;
@@ -56,7 +55,13 @@ public class HiClubSettingsActivity extends AppCompatActivity {
         // Load the home fragment once
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.settings_container, new HomeSettingsFragment())
+                    .replace(R.id.settings_container,
+                            GenericLayoutFragment.newInstance(
+                                    R.layout.fragment_home_settings,
+                                    "Preferences",
+                                    "settings_home"
+                            )
+                    )
                     .commit();
         }
 
@@ -84,7 +89,13 @@ public class HiClubSettingsActivity extends AppCompatActivity {
     }
 
     public void openUpdates() {
-        loadFragment(new UpdatesSettingsFragment(), "Updates");
+        loadFragment(GenericLayoutFragment.newInstance(
+                R.layout.fragment_updates_settings,
+                "Updates",
+                "updates_settings"
+            ),
+            "Updates"
+        );
     }
 
     public void openAbout() {

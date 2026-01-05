@@ -72,6 +72,7 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:dividerColor="?android:attr/textColorSecondary"
                 app:dividerInsetStart="56dp"/>
 
             <!-- Help -->
@@ -159,6 +160,7 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:dividerColor="?android:attr/textColorSecondary"
                 app:dividerInsetStart="56dp"/>
 
         </LinearLayout>
