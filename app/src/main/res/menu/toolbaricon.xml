@@ -7,16 +7,6 @@
         android:title="@string/title_more"
         app:showAsAction="always">
         <menu>
-            <group
-                android:id="@+id/toolbaricon_2">
-
-                <item
-                    android:id="@+id/topmenuDownloadmenus"
-                    android:title="@string/download_menus"
-                    android:icon="@drawable/ic_menu"
-                    android:onClick="downloadmenus" />
-
-            </group>
 
             <group
                 android:id="@+id/toolbaricon_3">
@@ -32,10 +22,6 @@
                     android:title="@string/title_activity_help"
                     android:icon="@drawable/ic_help"
                     android:onClick="help" />
-                <item
-                    android:id="@+id/legacySettings"
-                    android:title="legacySettings"
-                    android:onClick="legacySettings" />
             </group>
 
             <group

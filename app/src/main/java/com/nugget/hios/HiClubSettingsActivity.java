@@ -19,7 +19,7 @@ public class HiClubSettingsActivity extends AppCompatActivity {
     private CollapsingToolbarLayout collapsingToolbar;
     private AppBarLayout appBarLayout;
 
-    private static final String TITLE_HOME = "Preferences";
+    private static final String TITLE_HOME = "Settings";
 
     // Helper to load sub-pages
     private void loadFragment(Fragment fragment, String title) {
@@ -58,7 +58,7 @@ public class HiClubSettingsActivity extends AppCompatActivity {
                     .replace(R.id.settings_container,
                             GenericLayoutFragment.newInstance(
                                     R.layout.fragment_home_settings,
-                                    "Preferences",
+                                    "Settings",
                                     "settings_home"
                             )
                     )
@@ -82,10 +82,10 @@ public class HiClubSettingsActivity extends AppCompatActivity {
         });
     }
 
-    // --- Called from PreferencesHomeFragment ---
+    // --- Called from SettingsHomeFragment ---
 
     public void openAppearance() {
-        loadFragment(new AppearanceFragment(), "Appearance");
+        loadFragment(new AppearanceFragment(), "Customise HiOSCore");
     }
 
     public void openUpdates() {

@@ -171,11 +171,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         View sheetView = getLayoutInflater().inflate(R.layout.layout_menu_bottom_sheet, null);
         bottomSheetDialog.setContentView(sheetView);
 
-        sheetView.findViewById(R.id.topmenuDownloadmenus).setOnClickListener(view -> {
-            downloadmenus(null);
-            bottomSheetDialog.dismiss();
-        });
-
         sheetView.findViewById(R.id.topmenuSettings).setOnClickListener(view -> {
             settings(null);
             bottomSheetDialog.dismiss();
@@ -183,11 +178,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
         sheetView.findViewById(R.id.topmenuHelp).setOnClickListener(view -> {
             help(null);
-            bottomSheetDialog.dismiss();
-        });
-
-        sheetView.findViewById(R.id.legacySettings).setOnClickListener(view -> {
-            legacySettings(null);
             bottomSheetDialog.dismiss();
         });
 
@@ -211,25 +201,17 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     //ONCLICK LISTENERS GOING TO PAGES ON TOOLBAR/POPUP
-    public boolean downloadmenus(MenuItem item) {
-        Uri uri = Uri.parse("https://github.com/aarjay123/harmonyapp/releases/latest");
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
-        return true;
-    }
+
 
     public boolean settings(MenuItem item) {
         startActivity(new Intent(MainActivity.this, HiClubSettingsActivity.class));
         return true;
     }
 
-    public boolean legacySettings(MenuItem item) {
-        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-        return true;
-    }
-
     public boolean help(MenuItem item) {
-        startActivity(new Intent(MainActivity.this, HelpcenterActivity.class));
+        Uri uri = Uri.parse("https://thehighlandcafe.github.io/hiosmobileweb/activities/activity_help.html");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
         return true;
     }
 

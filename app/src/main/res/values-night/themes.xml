@@ -27,6 +27,9 @@
         <item name="colorOnSurfaceInverse">@color/md_theme_dark_inverseOnSurface</item>
         <item name="colorSurfaceInverse">@color/md_theme_dark_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
+
+        <item name="dynamicColorThemeOverlay">@style/ThemeOverlay.Material3.DynamicColors.DayNight</item>
+
         <!-- font config -->
         <item name="android:fontFamily">@font/outfit_regular</item>
         <!--Transparent Navigation Bar-->
@@ -75,12 +78,6 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
-
-    <style name="Preference.SwitchPreferenceCompat" parent="@style/Preference.SwitchPreferenceCompat.Material"
-        tools:ignore="ResourceCycle">
-        <item name="widgetLayout">@layout/preference_switch</item>
-    </style>
-
 
     <!-- Custom Widget Styles -->
     <style name="HiClub.Widget.TextView" parent="Widget.AppCompat.TextView">
