@@ -10,12 +10,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
 import androidx.core.view.MenuCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -117,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         boolean isTablet = getResources().getBoolean(R.bool.isTablet);
         boolean isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
-        if (isTablet || isLandscape) {
+        if (isTablet) {
             setContentView(R.layout.activity_main_rail);
 
             MaterialToolbar toolbar = findViewById(R.id.toolbar);
@@ -147,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             //Setup navigation with NavigationRailView
             NavigationUI.setupWithNavController(navigationRailView, navController);
         } else {
+            WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
             binding = ActivityMainBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
 
@@ -163,6 +169,43 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
             //Setup navigation with BottomNavigationView
             NavigationUI.setupWithNavController(binding.navView, navController);
+
+            //insets
+            final BottomNavigationView bottomNav = binding.navView;
+            final View root = binding.getRoot();
+
+            // Save the original padding + bottom margin from XML
+            final int pL = bottomNav.getPaddingLeft();
+            final int pT = bottomNav.getPaddingTop();
+            final int pR = bottomNav.getPaddingRight();
+            final int pB = bottomNav.getPaddingBottom();
+
+            final ViewGroup.MarginLayoutParams lp =
+                    (ViewGroup.MarginLayoutParams) bottomNav.getLayoutParams();
+            final int baseBottomMargin = lp.bottomMargin;
+
+            // 1) Override BottomNavigationView's own inset handling (prevents it adding padding)
+            ViewCompat.setOnApplyWindowInsetsListener(bottomNav, (v, insets) -> {
+                // keep your original padding so items stay centered
+                v.setPadding(pL, pT, pR, pB);
+                return insets; // (we’re just preventing padding changes)
+            });
+
+            // 2) Apply nav bar inset as extra *margin* so the whole pill lifts above the system bar
+            ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+                Insets nav = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
+                Insets gestures = insets.getInsets(WindowInsetsCompat.Type.systemGestures());
+                int bottomInset = Math.max(nav.bottom, gestures.bottom);
+
+                ViewGroup.MarginLayoutParams params =
+                        (ViewGroup.MarginLayoutParams) bottomNav.getLayoutParams();
+                params.bottomMargin = baseBottomMargin + bottomInset;
+                bottomNav.setLayoutParams(params);
+
+                return insets;
+            });
+
+            ViewCompat.requestApplyInsets(root);
         }
     }
 
