@@ -98,6 +98,16 @@ public class HiClubSettingsActivity extends AppCompatActivity {
         );
     }
 
+    public void openApps() {
+        loadFragment(GenericLayoutFragment.newInstance(
+                R.layout.fragment_apps_settings,
+                "Apps and Services",
+                "apps_settings"
+            ),
+                "Apps and Services"
+        );
+    }
+
     public void openAbout() {
         loadFragment(new AboutFragment(), "About HiClub");
     }

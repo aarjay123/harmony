@@ -18,15 +18,6 @@
     <string name="recommended">Recommended</string>
 
     <!-- URLs -->
-    <string name="updates_url" translatable="false">https://hienterprises.github.io/hiclub/download</string>
-    <string name="autoupdate_url">https://sites.google.com/view/hios-by-thc/download/autoupdate</string>
-    <string name="whatsnew_url_old" translatable="false">https://sites.google.com/view/hios-by-thc/download#h.evwm3pfxwkdn</string>
-    <string name="whatsnew_url">https://github.com/aarjay123/harmony/releases/latest</string>
-    <string name="notifications_url" translatable="false">https://whatsapp.com/channel/0029Va8U5lXISTkDAhk4bj3J</string>
-    <string name="hiosmusic_url" translatable="false">https://sites.google.com/view/hios-by-thc/download-hiosmusic#h.ogr0r3hzljpf</string>
-    <string name="hiosweather_url" translatable="false">https://sites.google.com/view/hios-by-thc/hiosweather#h.rynyo42t0yud</string>
-    <string name="hiosdesktop_url">https://sites.google.com/view/hios-by-thc/hiosdesktop</string>
-    <string name="hienterprises_url" translatable="false">https://hienterprises.github.io</string>
     <string name="support_url" translatable="false">https://sites.google.com/view/thehighlandcafe/customer-support</string>
 
     <string name="facebook_url">https://www.facebook.com/profile.php?id=100095224335357</string>
@@ -42,7 +33,6 @@
     <string name="hiossocial_url">https://sites.google.com/view/hios-by-thc/hisocial</string>
     <string name="privacypolicy_url">https://sites.google.com/view/hios-by-thc/privacy-policy</string>
     <string name="github_release_url">https://github.com/aarjay123/harmony/releases/latest</string>
-    <string name="github_prerelease_url">https://github.com/aarjay123/harmony/releases</string>
     <string name="direct_download_url">https://github.com/aarjay123/harmony/releases/latest/download/hiosmobile.apk</string>
     <string name="hirewards_url">https://sites.google.com/view/hirewards#h.j6t1hqgf8fxc</string>
 
@@ -112,32 +102,27 @@
         <!--Stay Informed category-->
     <string name="notifications_category">Stay Informed</string>
 
-    <string name="notifications_title">Join our Discord</string>
+    <string name="notifications_title">Join our WhatsApp channel</string>
     <string name="notifications_summary">Get notified every time we release a new update.</string>
 
         <!--Version Info category-->
     <string name="changelog_category">Version Information</string>
 
     <string name="whatsnew_title">What\'s New?</string>
+    <string name="whatsnew_summary">See the official release notes for the latest version.</string>
 
+    <string name="currentversion_title">Current version</string>
+    <string name="currentversion_summary">You are running version %1$s</string>
 
     <!-- Apps Settings -->
+    <string name="harmony_title">Harmony</string>
+    <string name="harmony_summary">This is our main app for ordering food at HiCafe, booking a room at weB&amp;B, viewing your daily dashboard, and more!</string>
+
     <string name="hiosmusic_title">HiOSMusic</string>
     <string name="hiosmusic_summary">This is our brand new music app. Your music, your vibe.</string>
-    
-    <string name="hiosweather_title">HiOSWeather</string>
-    <string name="hiosweather_summary">This is our weather app, which simply allows you to check the weather, use widgets, and more!</string>
 
-    <string name="hirewards_title">HiRewards</string>
-    <string name="hirewards_summary">Wanting to earn rewards for visiting your favourite brands by The Highland Cafe™? No probs, as you can now download HiRewards on your smartphone!</string>
-
-    <string name="nuggetdev_apps_title">Other software by HiDev</string>
-    <string name="nuggetdev_apps_summary">Take a look at other great apps, software, and services also by HiDev!</string>
-
-    <string name="windows">Windows Apps</string>
-
-    <string name="hiosdesktop_title">HiOSMobile for Windows</string>
-    <string name="hiosdesktop_summary">This is our newest app, this is a version of HiOSMobile designed for Windows 10 and 11!</string>
+    <string name="nuggetdev_apps_title">Other software developed by nuggetdev</string>
+    <string name="nuggetdev_apps_summary">Take a look at other great apps, software, and services also developed by nuggetdev!</string>
 
     <!-- Websites Settings -->
     <string name="hienterprises_title">The Highland Cafe™ Enterprises Website</string>

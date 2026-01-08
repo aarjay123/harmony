@@ -1,10 +1,15 @@
 package com.nugget.hios.ui.common;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.SharedPreferences;
 
@@ -34,6 +39,18 @@ public final class ScreenBinder {
                 bindUpdatesSettings(root, activity);
                 break;
 
+            case "apps_settings":
+                bindAppsSettings(root, activity);
+                break;
+
+            case "websites_settings":
+                bindWebsitesSettings(root, activity);
+                break;
+
+                //TODO: was needing to add websites and socials settings...
+            case "socials_settings":
+                bindSocialsSettings(root, activity);
+
             default:
                 break;
         }
@@ -58,6 +75,15 @@ public final class ScreenBinder {
             });
         }
 
+        View apps = root.findViewById(R.id.btn_apps);
+        if (apps != null) {
+            apps.setOnClickListener(view -> {
+                if (activity instanceof HiClubSettingsActivity) {
+                    ((HiClubSettingsActivity) activity).openApps();
+                }
+            });
+        }
+
         View websites = root.findViewById(R.id.btn_websites);
         if (websites != null) {
             websites.setOnClickListener(view -> {
@@ -67,7 +93,6 @@ public final class ScreenBinder {
                 Toast.makeText(activity, "Screen coming soon...", Toast.LENGTH_SHORT).show();
             });
         }
-        //TODO: DYNAMIC COLOUR BREAKS AFTER CHANGING THEME!!!!!!
 
         // --- Dark mode dropdown ---
         MaterialAutoCompleteTextView dropdown = root.findViewById(R.id.dropdown_theme);
@@ -150,6 +175,74 @@ public final class ScreenBinder {
             manuallyUpdate.setOnClickListener(view -> {
                 GithubUpdater.checkAndUpdate(activity, "aarjay123", "harmony");
             });
+        }
+
+        View prereleaseUpdate = root.findViewById(R.id.btn_unstable_update);
+        if (prereleaseUpdate != null) {
+            prereleaseUpdate.setOnClickListener(view -> {
+                openWebsite(activity, "https://github.com/aarjay123/harmony/releases");
+            });
+        }
+
+        View whatsapp = root.findViewById(R.id.btn_update_notifications);
+        if (whatsapp != null) {
+            whatsapp.setOnClickListener(view -> {
+                openWebsite(activity, "https://whatsapp.com/channel/0029Va8U5lXISTkDAhk4bj3J");
+            });
+        }
+
+        View changelog = root.findViewById(R.id.btn_changelog);
+        if (changelog != null) {
+            changelog.setOnClickListener(view -> {
+                openWebsite(activity, "https://github.com/aarjay123/harmony/releases/latest");
+            });
+        }
+
+        TextView versionSummary = root.findViewById(R.id.currentversion_summary);
+        if (versionSummary != null) {
+            String versionName = getVersionName(activity);
+            versionSummary.setText(activity.getString(R.string.currentversion_summary, versionName));
+        }
+    }
+
+    private static void bindAppsSettings(View root, Activity activity) {
+        View harmonyButton = root.findViewById(R.id.btn_harmony);
+        if (harmonyButton != null) {
+            harmonyButton.setOnClickListener(view -> {
+                openWebsite(activity, "https://hienterprises.github.io/harmony/home");
+            });
+        }
+
+        View hiosmusicButton = root.findViewById(R.id.btn_hiosmusic);
+        if (hiosmusicButton != null) {
+            hiosmusicButton.setOnClickListener(view -> {
+                openWebsite(activity, "https://github.com/aarjay123/hiosmusic/releases/latest");
+            });
+        }
+
+        View nuggetdevButton = root.findViewById(R.id.btn_nuggetdev);
+        if (nuggetdevButton != null) {
+            nuggetdevButton.setOnClickListener(view -> {
+                openWebsite(activity, "https://hienterprises.github.io/nuggetdev/home");
+            });
+        }
+    }
+
+    //Universal method for opening a website -- eliminates code repetition
+    private static void openWebsite(Activity activity, String url) {
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        activity.startActivity(intent);
+    }
+
+    //method for getting the installed version of HiOSMobile's version name
+    private static String getVersionName(Activity activity) {
+        try {
+            PackageManager pm = activity.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(activity.getPackageName(), 0);
+            return pi.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            return "Unknown";
         }
     }
 }

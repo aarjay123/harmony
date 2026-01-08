@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             app:cardBackgroundColor="?attr/colorPrimaryContainer"
             app:cardElevation="0dp">
 
@@ -92,8 +92,9 @@
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
+            app:shapeAppearanceOverlay="@style/Shape.Card.TopRoundedOnly"
             app:cardBackgroundColor="?attr/colorPrimaryContainer"
+            android:layout_marginBottom="3dp"
             app:cardElevation="0dp">
 
             <LinearLayout
@@ -139,7 +140,8 @@
                         <com.google.android.material.textfield.MaterialAutoCompleteTextView
                             android:id="@+id/dropdown_theme"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
+                            android:padding="0dp"
                             android:inputType="none"
                             android:focusable="false"
                             android:cursorVisible="false"
@@ -147,12 +149,21 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:dividerColor="?android:attr/textColorSecondary"
-                    app:dividerInsetStart="56dp" />
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:shapeAppearanceOverlay="@style/Shape.Card.BottomRoundedOnly"
+            app:cardBackgroundColor="?attr/colorPrimaryContainer"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -185,7 +196,7 @@
                     <com.google.android.material.materialswitch.MaterialSwitch
                         android:id="@+id/switch_dynamic_colour"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="35dp"
                         style="?attr/materialSwitchStyle"
                         app:trackTint="@color/switch_track_tint"
                         app:thumbTint="@color/switch_thumb_tint"/>
@@ -209,7 +220,8 @@
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
+            android:layout_marginBottom="3dp"
+            app:shapeAppearanceOverlay="@style/Shape.Card.TopRoundedOnly"
             app:cardBackgroundColor="?attr/colorPrimaryContainer"
             app:cardElevation="0dp">
 
@@ -248,12 +260,22 @@
                         android:layout_height="24dp"
                         android:src="@drawable/ic_chevron" />
                 </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:dividerColor="?android:attr/textColorSecondary"
-                    app:dividerInsetStart="56dp" />
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            app:shapeAppearanceOverlay="@style/Shape.Card.SquaredOff"
+            app:cardBackgroundColor="?attr/colorPrimaryContainer"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <!-- Apps -->
                 <LinearLayout
@@ -265,7 +287,7 @@
                     android:focusable="true"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="@dimen/card_inner_padding">
+                    android:padding="@dimen/card_inner_middle_padding">
 
                     <ImageView
                         android:layout_width="24dp"
@@ -285,12 +307,22 @@
                         android:layout_height="24dp"
                         android:src="@drawable/ic_chevron" />
                 </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:dividerColor="?android:attr/textColorSecondary"
-                    app:dividerInsetStart="56dp" />
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            app:shapeAppearanceOverlay="@style/Shape.Card.SquaredOff"
+            app:cardBackgroundColor="?attr/colorPrimaryContainer"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <!-- Websites -->
                 <LinearLayout
@@ -302,7 +334,7 @@
                     android:focusable="true"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="@dimen/card_inner_padding">
+                    android:padding="@dimen/card_inner_middle_padding">
 
                     <ImageView
                         android:layout_width="24dp"
@@ -322,12 +354,21 @@
                         android:layout_height="24dp"
                         android:src="@drawable/ic_chevron" />
                 </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:dividerColor="?android:attr/textColorSecondary"
-                    app:dividerInsetStart="56dp" />
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:shapeAppearanceOverlay="@style/Shape.Card.BottomRoundedOnly"
+            app:cardBackgroundColor="?attr/colorPrimaryContainer"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <!-- Socials -->
                 <LinearLayout

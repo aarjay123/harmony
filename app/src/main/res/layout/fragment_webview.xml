@@ -18,6 +18,5 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <!--UI goes here-->
     </LinearLayout>
 </FrameLayout>
