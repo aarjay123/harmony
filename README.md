@@ -32,21 +32,23 @@ To install HiOSMobile on your Android device, please follow these steps:
 
 HiOSMobile is also accessible on iOS as a Progressive Web App (PWA):
 
-1.  **Visit HiOSMobileWeb:** Open Safari on your iOS device and go to the [HiOSMobileWeb website](https://thehighlandcafe.github.io/hiosmobileweb).
+1.  **Visit HiOSMobileWeb:** Open Safari on your iOS device and go to the [HiOSMobile Lite](https://thehighlandcafe.github.io/hiosmobileweb).
 
 2.  **Add to Home Screen:** Tap the **Share** icon (usually a square with an arrow pointing upwards). In the share sheet, scroll down and select **Add to Home Screen**.
 
-3.  **Open HiOSMobile:** A HiOSMobile icon will be added to your home screen. Tap this icon to launch the application.
+3.  **Open HiOSMobile Lite:** A HiOSMobile icon will be added to your home screen. Tap this icon to launch the application.
 
 ## Updating HiOSMobile on iOS (PWA)
 
-To ensure you have the latest version of the HiOSMobile PWA on iOS:
+To ensure you have the latest version of HiOSMobile Lite on iOS:
 
 1.  Open the **Settings** app.
 2.  Navigate to **Safari**.
 3.  Select **Cookies and Saved Site Data**.
 4.  Search for and select **thehighlandcafe.github.io**.
 5.  Tap **Remove All Website Data**. This action will clear the cached data and ensure the next time you open HiOSMobile, it fetches the latest version.
+
+You can also install this version of HiOSMobile on Android, although it is recommended that you go for installing the full version of HiOSMobile for the best, most native and fast experience.
 
 **Please Note:** An active internet connection is required to access all features and services within HiOSMobile.
 
@@ -58,9 +60,8 @@ Stay up-to-date with the latest features, improvements, and bug fixes by visitin
 
 Explore the source code for our other related projects:
 
-* **HiOSWebCore Source Code:** [https://github.com/thehighlandcafe/hioswebcore](https://github.com/thehighlandcafe/hioswebcore)
-* **HiOSMobileWeb Source Code:** [https://github.com/thehighlandcafe/hiosmobileweb](https://github.com/thehighlandcafe/hiosmobileweb)
-* **HiOSDesktop Source Code:** [https://github.com/aarjay123/hiosdesktop](https://github.com/aarjay123/hiosdesktop)
+* **HiOSCore Source Code:** [https://github.com/thehighlandcafe/hioswebcore](https://github.com/thehighlandcafe/hioswebcore)
+* **HiOSMobile Lite Source Code:** [https://github.com/thehighlandcafe/hiosmobileweb](https://github.com/thehighlandcafe/hiosmobileweb)
 
 ## Our Official Websites
 
