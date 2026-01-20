@@ -267,8 +267,7 @@
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            app:shapeAppearanceOverlay="@style/Shape.Card.SquaredOff"
+            app:shapeAppearanceOverlay="@style/Shape.Card.BottomRoundedOnly"
             app:cardBackgroundColor="?attr/colorPrimaryContainer"
             app:cardElevation="0dp">
 
@@ -287,7 +286,7 @@
                     android:focusable="true"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="@dimen/card_inner_middle_padding">
+                    android:padding="@dimen/card_inner_padding">
 
                     <ImageView
                         android:layout_width="24dp"
@@ -310,7 +309,7 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
+        <!--<com.google.android.material.card.MaterialCardView
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -324,7 +323,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Websites -->
                 <LinearLayout
                     android:id="@+id/btn_websites"
                     android:layout_width="match_parent"
@@ -370,7 +368,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Socials -->
                 <LinearLayout
                     android:id="@+id/btn_socials"
                     android:layout_width="match_parent"
@@ -402,7 +399,7 @@
                 </LinearLayout>
 
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>-->
 
         <!-- SECTION 3: ABOUT -->
         <TextView

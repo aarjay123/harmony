@@ -109,7 +109,7 @@ public class HiClubSettingsActivity extends AppCompatActivity {
     }
 
     public void openAbout() {
-        loadFragment(new AboutFragment(), "About HiClub");
+        loadFragment(new AboutFragment(), "About HiOSMobile");
     }
 
     public void openPrivacyPolicy() {

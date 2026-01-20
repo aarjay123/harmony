@@ -133,6 +133,25 @@
 
     <string name="hienterprises_title">The Highland Cafe™ Enterprises Website</string>
     <string name="hienterprises_summary">The parent company of lots of brilliant brands you love!</string>
+
+    <string name="hicafe_title">HiCafe™</string>
+    <string name="hicafe_summary">Our main restaurant brand, the food brand you know and love!</string>
+
+    <string name="hyped_title">HYPED</string>
+    <string name="hyped_summary">Elevated energy cafe, nightclub, and restaurant.</string>
+
+    <string name="cafefiesta_title">CafeFiesta™</string>
+    <string name="cafefiesta_summary">This is our coffee-focused brand!</string>
+
+    <string name="foodhall_title">FoodHall™</string>
+    <string name="foodhall_summary">Our supermarkets. Massive in British, Massive in Quality.</string>
+
+    <string name="hicola_title">Highland Cola™</string>
+    <string name="hicola_summary">This is our company that makes sodas and more!</string>
+
+    <string name="hiparty_title">HiParty™</string>
+
+
     <string name="nuggetdev_website_title">HiDev Website</string>
     <string name="hios_title">HiOSMobile Website</string>
     <string name="thehighlandcafe_title">The Highland Cafe™ Website</string>

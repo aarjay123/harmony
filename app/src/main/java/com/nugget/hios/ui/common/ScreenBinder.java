@@ -23,6 +23,7 @@ import androidx.webkit.internal.ApiFeature;
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.nugget.hios.HiClubSettingsActivity;
 import com.nugget.hios.R;
+import com.nugget.hios.ui.preferences.AboutFragment;
 import com.nugget.hios.updates.GithubUpdater;
 
 public final class ScreenBinder {
@@ -66,6 +67,24 @@ public final class ScreenBinder {
             });
         }
 
+        View about = root.findViewById(R.id.btn_about);
+        if (about != null) {
+            appearance.setOnClickListener(view -> {
+                if (activity instanceof HiClubSettingsActivity) {
+                    ((HiClubSettingsActivity) activity).openAbout();
+                }
+            });
+        }
+
+        View privacyPolicy = root.findViewById(R.id.btn_privacypolicy);
+        if (privacyPolicy != null) {
+            appearance.setOnClickListener(view -> {
+                if (activity instanceof HiClubSettingsActivity) {
+                    ((HiClubSettingsActivity) activity).openPrivacyPolicy();
+                }
+            });
+        }
+
         View updates = root.findViewById(R.id.btn_updates);
         if (updates != null) {
             updates.setOnClickListener(view -> {
@@ -84,15 +103,15 @@ public final class ScreenBinder {
             });
         }
 
-        View websites = root.findViewById(R.id.btn_websites);
+        /*View websites = root.findViewById(R.id.btn_websites);
         if (websites != null) {
             websites.setOnClickListener(view -> {
                 /*if (activity instanceof HiClubSettingsActivity) {
                     ((HiClubSettingsActivity) activity)
-                }*/
+                }*//*
                 Toast.makeText(activity, "Screen coming soon...", Toast.LENGTH_SHORT).show();
             });
-        }
+        }*/
 
         // --- Dark mode dropdown ---
         MaterialAutoCompleteTextView dropdown = root.findViewById(R.id.dropdown_theme);
