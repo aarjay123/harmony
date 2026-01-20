@@ -7,25 +7,41 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.nugget.hios.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.nugget.hios.ui.common.WebViewFragment"
+        android:label="@string/title_home">
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue="https://thehighlandcafe.github.io/hioswebcore/welcome.html" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.nugget.hios.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.nugget.hios.ui.common.WebViewFragment"
+        android:label="@string/title_dashboard">
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue="https://thehighlandcafe.github.io/hioswebcore/restaurant" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.nugget.hios.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="com.nugget.hios.ui.common.WebViewFragment"
+        android:label="@string/title_notifications">
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue="https://thehighlandcafe.github.io/hioswebcore/hotelactivities.html" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.nugget.hios.ui.settings.SettingsFragment"
-        android:label="@string/title_roomkey"
-        tools:layout="@layout/fragment_settings" />
+        android:name="com.nugget.hios.ui.common.WebViewFragment"
+        android:label="@string/title_roomkey">
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue="https://thehighlandcafe.github.io/hioswebcore/roomkey.html" />
+    </fragment>
 </navigation>

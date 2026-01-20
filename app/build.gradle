@@ -4,14 +4,14 @@ plugins {
 
 android {
     namespace 'com.nugget.hios'
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.nugget.hios"
         minSdk 24
-        targetSdk 35
-        versionCode 4
-        versionName "2.6.2.2"
+        targetSdk 36
+        versionCode 5
+        versionName "3.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,18 +34,18 @@ android {
 
 dependencies {
     implementation "androidx.preference:preference-ktx:1.2.1"
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation "androidx.core:core:1.16.0"
-    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation "androidx.core:core:1.17.0"
+    implementation 'com.google.android.material:material:1.13.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.9.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.0'
-    implementation 'androidx.navigation:navigation-fragment:2.9.0'
-    implementation 'androidx.navigation:navigation-ui:2.9.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.10.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0'
+    implementation 'androidx.navigation:navigation-fragment:2.9.6'
+    implementation 'androidx.navigation:navigation-ui:2.9.6'
     implementation 'androidx.preference:preference:1.2.1'
     implementation 'org.imaginativeworld.oopsnointernet:oopsnointernet:2.0.0'
-    implementation 'androidx.webkit:webkit:1.13.0'
+    implementation 'androidx.webkit:webkit:1.15.0'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
 }
