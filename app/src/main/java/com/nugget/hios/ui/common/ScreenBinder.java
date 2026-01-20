@@ -69,7 +69,8 @@ public final class ScreenBinder {
 
         View about = root.findViewById(R.id.btn_about);
         if (about != null) {
-            appearance.setOnClickListener(view -> {
+            // FIXED: Was 'appearance.setOnClickListener'
+            about.setOnClickListener(view -> {
                 if (activity instanceof HiClubSettingsActivity) {
                     ((HiClubSettingsActivity) activity).openAbout();
                 }
@@ -78,7 +79,8 @@ public final class ScreenBinder {
 
         View privacyPolicy = root.findViewById(R.id.btn_privacypolicy);
         if (privacyPolicy != null) {
-            appearance.setOnClickListener(view -> {
+            // FIXED: Was 'appearance.setOnClickListener'
+            privacyPolicy.setOnClickListener(view -> {
                 if (activity instanceof HiClubSettingsActivity) {
                     ((HiClubSettingsActivity) activity).openPrivacyPolicy();
                 }
