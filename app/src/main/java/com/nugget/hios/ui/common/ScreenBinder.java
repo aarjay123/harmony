@@ -43,13 +43,13 @@ public final class ScreenBinder {
                 bindAppsSettings(root, activity);
                 break;
 
-            case "websites_settings":
+            /*case "websites_settings":
                 bindWebsitesSettings(root, activity);
                 break;
 
                 //TODO: was needing to add websites and socials settings...
             case "socials_settings":
-                bindSocialsSettings(root, activity);
+                bindSocialsSettings(root, activity);*/
 
             default:
                 break;

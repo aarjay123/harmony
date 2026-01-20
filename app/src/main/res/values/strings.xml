@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" translatable="false">HiClub</string>
+    <string name="app_name" translatable="false">HiOSMobile</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Eat</string>
     <string name="title_notifications">Stay</string>
@@ -29,7 +29,7 @@
     <string name="threads_url">https://www.threads.net/@thehighlandcafe</string>
     <string name="thehighlandcafe_url">https://hienterprises.github.io/hicafe/home</string>
     <string name="nuggetdev_url">https://hienterprises.github.io/nuggetdev/home</string>
-    <string name="hios_url">https://hienterprises.github.io/hiclub/</string>
+    <string name="hios_url">https://hienterprises.github.io/HiOSMobile/</string>
     <string name="hiossocial_url">https://sites.google.com/view/hios-by-thc/hisocial</string>
     <string name="privacypolicy_url">https://sites.google.com/view/hios-by-thc/privacy-policy</string>
     <string name="github_release_url">https://github.com/aarjay123/harmony/releases/latest</string>
@@ -56,7 +56,7 @@
 
     <string name="websites_header">Websites</string>
 
-    <string name="about_app">About HiClub</string>
+    <string name="about_app">About HiOSMobile</string>
 
     <string name="socials_header">Socials</string>
 
@@ -87,17 +87,17 @@
     <string name="theme_dark">Dark</string>
 
     <!-- Updates Settings -->
-        <!--Update HiClub category-->
-    <string name="update_category">Update HiClub</string>
+        <!--Update HiOSMobile category-->
+    <string name="update_category">Update HiOSMobile</string>
 
     <string name="updates_title">Check for updates</string>
     <string name="updates_summary">Checks to see if any updates are available on GitHub. If so, it automatically downloads and installs.</string>
 
     <string name="updates_prerelease_title">Download Pre-release Version</string>
-    <string name="updates_prerelease_summary">Download the latest HiClub pre-release version.\n\nOn the releases page on GitHub, find one with the \'pre-release\' tag.\n\nCAUTION: Pre-releases can be unstable!</string>
+    <string name="updates_prerelease_summary">Download the latest HiOSMobile pre-release version.\n\nOn the releases page on GitHub, find one with the \'pre-release\' tag.\n\nCAUTION: Pre-releases can be unstable!</string>
 
     <string name="autoupdate_title">Set Up Auto-Updates</string>
-    <string name="autoupdate_summary">Visit our site to learn how to get automatic updates for the HiClub app.</string>
+    <string name="autoupdate_summary">Visit our site to learn how to get automatic updates for the HiOSMobile app.</string>
 
         <!--Stay Informed category-->
     <string name="notifications_category">Stay Informed</string>
@@ -125,7 +125,14 @@
     <string name="nuggetdev_apps_summary">Take a look at other great apps, software, and services also developed by nuggetdev!</string>
 
     <!-- Websites Settings -->
+    <string name="hienterprises">The Highland Cafe™ Enterprises</string>
+    <string name="food_brands">Food and Shopping</string>
+    <string name="hotel_brands">Hotels and Accommodation</string>
+    <string name="tech_brands">Technology</string>
+    <string name="politics_brands">Politics</string>
+
     <string name="hienterprises_title">The Highland Cafe™ Enterprises Website</string>
+    <string name="hienterprises_summary">The parent company of lots of brilliant brands you love!</string>
     <string name="nuggetdev_website_title">HiDev Website</string>
     <string name="hios_title">HiOSMobile Website</string>
     <string name="thehighlandcafe_title">The Highland Cafe™ Website</string>
