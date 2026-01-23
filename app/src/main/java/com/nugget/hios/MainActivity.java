@@ -252,9 +252,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     public boolean help(MenuItem item) {
-        Uri uri = Uri.parse("https://thehighlandcafe.github.io/hiosmobileweb/activities/activity_help.html");
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
+        startActivity(new Intent(MainActivity.this, HelpcenterActivity.class));
         return true;
     }
 

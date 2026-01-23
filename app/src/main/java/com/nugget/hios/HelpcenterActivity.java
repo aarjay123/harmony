@@ -10,25 +10,22 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.nugget.hios.ui.common.GenericLayoutFragment;
-import com.nugget.hios.ui.preferences.AboutFragment;
-import com.nugget.hios.ui.preferences.AppearanceFragment;
-import com.nugget.hios.ui.preferences.PrivacypolicyFragment;
 
-public class HiClubSettingsActivity extends AppCompatActivity {
+public class HelpcenterActivity extends AppCompatActivity {
 
     private CollapsingToolbarLayout collapsingToolbar;
     private AppBarLayout appBarLayout;
 
-    private static final String TITLE_HOME = "Settings";
+    private static final String TITLE_HOME = "Help";
 
-    // Helper to load sub-pages
+    //Helper to load subpages
     private void loadFragment(Fragment fragment, String title) {
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(
                         R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right
                 )
-                .replace(R.id.settings_container, fragment)
-                .addToBackStack(title)   // store title for back navigation
+                .replace(R.id.helpcenter_container, fragment)
+                .addToBackStack(title)
                 .commit();
 
         collapsingToolbar.setTitle(title);
@@ -38,9 +35,9 @@ public class HiClubSettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hiclub_settings);
+        setContentView(R.layout.activity_helpcenter);
 
-        // Toolbar setup
+        //toolbar setup
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -51,20 +48,20 @@ public class HiClubSettingsActivity extends AppCompatActivity {
         collapsingToolbar = findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle(TITLE_HOME);
 
-        // Load the home fragment once
+        //load home fragment once.
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.settings_container,
+                    .replace(R.id.helpcenter_container,
                             GenericLayoutFragment.newInstance(
-                                    R.layout.fragment_home_settings,
-                                    "Settings",
-                                    "settings_home"
+                                    R.layout.fragment_home_helpcenter,
+                                    "Help",
+                                    "helpcenter_home"
                             )
                     )
                     .commit();
         }
 
-        // Keep title in sync with back stack
+        //keep title in sync with back stack.
         getSupportFragmentManager().addOnBackStackChangedListener(() -> {
             int count = getSupportFragmentManager().getBackStackEntryCount();
 
@@ -81,13 +78,10 @@ public class HiClubSettingsActivity extends AppCompatActivity {
         });
     }
 
-    // --- Called from SettingsHomeFragment ---
+    //called from HelpcenterHomeFragment
 
-    public void openAppearance() {
-        loadFragment(new AppearanceFragment(), "Customise HiOSCore");
-    }
-
-    public void openUpdates() {
+    /*e.g...
+        public void openUpdates() {
         loadFragment(GenericLayoutFragment.newInstance(
                 R.layout.fragment_updates_settings,
                 "Updates",
@@ -105,15 +99,8 @@ public class HiClubSettingsActivity extends AppCompatActivity {
             ),
                 "Apps and Services"
         );
-    }
-
-    public void openAbout() {
-        loadFragment(new AboutFragment(), "About HiOSMobile");
-    }
-
-    public void openPrivacyPolicy() {
-        loadFragment(new PrivacypolicyFragment(), "Privacy Policy");
-    }
+    } etc etc etc
+     */
 
     @Override
     public boolean onSupportNavigateUp() {
