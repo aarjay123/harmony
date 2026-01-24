@@ -22,6 +22,7 @@ import androidx.webkit.internal.ApiFeature;
 
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.nugget.hios.HiClubSettingsActivity;
+import com.nugget.hios.HelpcenterActivity;
 import com.nugget.hios.R;
 import com.nugget.hios.ui.preferences.AboutFragment;
 import com.nugget.hios.updates.GithubUpdater;
@@ -51,6 +52,10 @@ public final class ScreenBinder {
                 //TODO: was needing to add websites and socials settings...
             case "socials_settings":
                 bindSocialsSettings(root, activity);*/
+
+            case "helpcenter_home":
+                bindHelpcenterHome(root, activity);
+                break;
 
             default:
                 break;
@@ -245,6 +250,101 @@ public final class ScreenBinder {
         if (nuggetdevButton != null) {
             nuggetdevButton.setOnClickListener(view -> {
                 openWebsite(activity, "https://hienterprises.github.io/nuggetdev/home");
+            });
+        }
+    }
+
+    /*
+    This is the ScreenBinder for the help center -- it just needs the helpcenterhome screen binder, since it's all fragments.
+     */
+    private static void bindHelpcenterHome(View root, Activity activity) {
+        View tutorial = root.findViewById(R.id.btn_tutorial);
+        if (tutorial != null) {
+            tutorial.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).openTutorial();
+                }
+            });
+        }
+
+        View food = root.findViewById(R.id.btn_foodhelp);
+        if (food != null) {
+            food.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).openFood();
+                }
+            });
+        }
+
+        View hotel = root.findViewById(R.id.btn_hotelhelp);
+        if (hotel != null) {
+            hotel.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).openHotel();
+                }
+            });
+        }
+
+        View roomkey = root.findViewById(R.id.btn_roomkeyhelp);
+        if (roomkey != null) {
+            roomkey.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).openRoomkey();
+                }
+            });
+        }
+
+        View support = root.findViewById(R.id.btn_supporthelp);
+        if (support != null) {
+            support.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).openSupport();
+                }
+            });
+        }
+
+        View internet = root.findViewById(R.id.btn_internethelp);
+        if (internet != null) {
+            internet.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).openInternet();
+                }
+            });
+        }
+
+        View updates = root.findViewById(R.id.btn_updateshelp);
+        if (updates != null) {
+            updates.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).openUpdates();
+                }
+            });
+        }
+
+        View comingSoon = root.findViewById(R.id.btn_comingsoon);
+        if (comingSoon != null) {
+            comingSoon.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).comingSoon();
+                }
+            });
+        }
+
+        View termsConditions = root.findViewById(R.id.btn_termsconditions);
+        if (termsConditions != null) {
+            termsConditions.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).termsConditions();
+                }
+            });
+        }
+
+        View feedback = root.findViewById(R.id.btn_feedback);
+        if (feedback != null) {
+            feedback.setOnClickListener(view -> {
+                if (activity instanceof HelpcenterActivity) {
+                    ((HelpcenterActivity) activity).sendFeedback();
+                }
             });
         }
     }

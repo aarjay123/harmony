@@ -1,5 +1,6 @@
 package com.nugget.hios.updates;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.BroadcastReceiver;
@@ -45,7 +46,7 @@ public class GithubUpdater {
                     if (!updateAvailable) {
                         new AlertDialog.Builder(activity)
                                 .setTitle("Up to date")
-                                .setMessage("You already have the latest version of HiClub installed.")
+                                .setMessage("You already have the latest version of HiOSMobile installed.")
                                 .setPositiveButton("Ok cool", null)
                                 .show();
                         return;
@@ -69,6 +70,7 @@ public class GithubUpdater {
         });
     }
 
+    @SuppressLint("UnspecifiedRegisterReceiverFlag")
     private static void downloadAndInstall(Activity activity, String apkUrl) {
         //Android 8+ needs per-app permission to install apks, so a check is necessary.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
