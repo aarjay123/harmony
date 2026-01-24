@@ -9,7 +9,17 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.nugget.hios.ui.comingsoon.ComingsoonFragment;
 import com.nugget.hios.ui.common.GenericLayoutFragment;
+import com.nugget.hios.ui.feedback.FeedbackFragment;
+import com.nugget.hios.ui.helpcenter.HotelFragment;
+import com.nugget.hios.ui.helpcenter.InternetFragment;
+import com.nugget.hios.ui.helpcenter.RestaurantFragment;
+import com.nugget.hios.ui.helpcenter.RoomkeyFragment;
+import com.nugget.hios.ui.helpcenter.TutorialFragment;
+import com.nugget.hios.ui.helpcenter.UpdatesFragment;
+import com.nugget.hios.ui.support.SupportFragment;
+import com.nugget.hios.ui.tc.TcFragment;
 
 public class HelpcenterActivity extends AppCompatActivity {
 
@@ -79,6 +89,45 @@ public class HelpcenterActivity extends AppCompatActivity {
     }
 
     //called from HelpcenterHomeFragment
+    public void openTutorial() {
+        loadFragment(new TutorialFragment(), "Navigation Tutorial");
+    }
+
+    public void openFood() {
+        loadFragment(new RestaurantFragment(), "Eat");
+    }
+
+    public void openHotel() {
+        loadFragment(new HotelFragment(), "Stay");
+    }
+
+    public void openRoomkey() {
+        loadFragment(new RoomkeyFragment(), "Room Key");
+    }
+
+    public void openSupport() {
+        loadFragment(new SupportFragment(), "Customer Support");
+    }
+
+    public void openInternet() {
+        loadFragment(new InternetFragment(), "WiFi and Internet");
+    }
+
+    public void openUpdates() {
+        loadFragment(new UpdatesFragment(), "Updates");
+    }
+
+    public void comingSoon() {
+        loadFragment(new ComingsoonFragment(), "Coming Soon");
+    }
+
+    public void termsConditions() {
+        loadFragment(new TcFragment(), "Terms and Conditions");
+    }
+
+    public void sendFeedback() {
+        loadFragment(new FeedbackFragment(), "Send Feedback");
+    }
 
     /*e.g...
         public void openUpdates() {

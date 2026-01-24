@@ -7,6 +7,16 @@
         android:title="@string/title_more"
         app:showAsAction="always">
         <menu>
+            <group
+                android:id="@+id/toolbaricon_2">
+
+                <item
+                    android:id="@+id/topmenuDownloadmenus"
+                    android:title="@string/download_menus"
+                    android:icon="@drawable/ic_menu"
+                    android:onClick="downloadmenus" />
+
+            </group>
 
             <group
                 android:id="@+id/toolbaricon_3">

@@ -42,8 +42,8 @@
     <string name="title_activity_tc">Terms and Conditions</string>
     <string name="title_activity_support">Customer Support</string>
 
-    <string name="download_menus">Download Menus</string>
-    <string name="visit_blog">Visit HiEnterprises™ Blog</string>
+    <string name="download_menus">Download menus</string>
+    <string name="visit_blog">Visit our blog</string>
 
     <!-- Settings Titles -->
     <string name="section_customisation">Customisation</string>
