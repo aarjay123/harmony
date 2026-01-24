@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         app:shapeAppearanceOverlay="@style/Shape.Card.TopRoundedOnly"
-        app:cardBackgroundColor="?attr/colorPrimaryContainer"
+        app:cardBackgroundColor="?attr/colorSurfaceContainer"
         app:cardElevation="0dp">
 
         <LinearLayout

@@ -15,5 +15,133 @@
         android:paddingHorizontal="@dimen/adaptive_horizontal_margin"
         android:paddingBottom="24dp"
         android:clipToPadding="false">
+
+        <!-- SECTION 1: TUTORIAL-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tutorial_title"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="12dp"
+            style="@style/TextAppearance.Material3.LabelLarge"
+            android:textColor="?android:attr/textColorSecondary"/>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainer"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/btn_tutorial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/card_inner_padding">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_tutorial"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tutorial_header"
+                            style="@style/TextAppearance.Material3.BodyLarge"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tutorial_summary"
+                            style="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="?colorOnSurface"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- SECTION 2: GENERAL HELP-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/general_title"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="12dp"
+            style="@style/TextAppearance.Material3.LabelLarge"
+            android:textColor="?android:attr/textColorSecondary"/>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            app:shapeAppearanceOverlay="@style/Shape.Card.TopRoundedOnly"
+            app:cardBackgroundColor="?attr/colorSurfaceContainer"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Updates -->
+                <LinearLayout
+                    android:id="@+id/btn_foodhelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/card_inner_padding">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_restauranticon" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/title_dashboard"
+                        style="@style/TextAppearance.Material3.BodyLarge" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
