@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Menu;
@@ -65,10 +66,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         super.onCreate(savedInstanceState);
         updateNavigationMode();
 
-        // Note: ProgressBar was removed from activity_main.xml (Phone Layout),
-        // so this might be null in phone mode. It should be handled with null checks.
-        progressBar = findViewById(R.id.activity_progress_bar);
-
         // No Internet Dialog: Pendulum
         NoInternetDialogPendulum.Builder builder = new NoInternetDialogPendulum.Builder(
                 this,
@@ -122,41 +119,47 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         boolean isTablet = getResources().getBoolean(R.bool.isTablet);
         boolean isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
-        if (isTablet) {
+        if (isTablet || isLandscape) {
             setContentView(R.layout.activity_main_rail);
 
-            MaterialToolbar toolbar = findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
+            // 1. Enable "Hide Cutout" mode for Landscape/Tablets
+            // This puts a black bar on the side to hide the camera notch
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER;
+                getWindow().setAttributes(lp);
+            }
 
-            toolbar.setElevation(0);
+            FloatingActionButton fab = findViewById(R.id.fab_menu);
+            if (fab != null) {
+                fab.setOnClickListener(this::showFabMenu);
+            }
 
-            //setting the colour of the toolbar to be the same as the colour of the statusbar
-            int statusBarColour = getWindow().getStatusBarColor();
-            toolbar.setBackgroundColor(statusBarColour);
-
-            //Initialise NavigationRailView
+            // Initialise NavigationRailView
             NavigationRailView navigationRailView = findViewById(R.id.navigation_rail);
 
-            //Passing each menu ID as a set of Ids because each
-            //menu should be considered as top level destinations.
-            AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.navigation_home,
-                    R.id.navigation_dashboard,
-                    R.id.navigation_notifications,
-                    R.id.navigation_settings
-            ).build();
-
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-            NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-            //Setup navigation with NavigationRailView
+            // CRASH FIX:
+            // We REMOVED "NavigationUI.setupActionBarWithNavController(...)"
+            // because you don't have a toolbar anymore.
+
+            // Setup navigation with NavigationRailView
             NavigationUI.setupWithNavController(navigationRailView, navController);
+
         } else {
+            // 2. RESET Cutout mode for Portrait (Phones)
+            // This ensures the black bar goes away when you rotate back to portrait,
+            // so the status bar looks normal again.
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT;
+                getWindow().setAttributes(lp);
+            }
+
             WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
             binding = ActivityMainBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
-
-            // --- Updated for FAB Menu Logic (No Toolbar) ---
 
             // Set up Floating Action Button for the Menu
             FloatingActionButton fab = findViewById(R.id.fab_menu);
@@ -165,16 +168,14 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             }
 
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-            // No ActionBar setup needed since we removed the Toolbar
 
-            //Setup navigation with BottomNavigationView
+            // Setup navigation with BottomNavigationView
             NavigationUI.setupWithNavController(binding.navView, navController);
 
-            //insets
+            // Insets handling for transparent navigation bar
             final BottomNavigationView bottomNav = binding.navView;
             final View root = binding.getRoot();
 
-            // Save the original padding + bottom margin from XML
             final int pL = bottomNav.getPaddingLeft();
             final int pT = bottomNav.getPaddingTop();
             final int pR = bottomNav.getPaddingRight();
@@ -184,14 +185,11 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
                     (ViewGroup.MarginLayoutParams) bottomNav.getLayoutParams();
             final int baseBottomMargin = lp.bottomMargin;
 
-            // 1) Override BottomNavigationView's own inset handling (prevents it adding padding)
             ViewCompat.setOnApplyWindowInsetsListener(bottomNav, (v, insets) -> {
-                // keep your original padding so items stay centered
                 v.setPadding(pL, pT, pR, pB);
-                return insets; // (we’re just preventing padding changes)
+                return insets;
             });
 
-            // 2) Apply nav bar inset as extra *margin* so the whole pill lifts above the system bar
             ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
                 Insets nav = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
                 Insets gestures = insets.getInsets(WindowInsetsCompat.Type.systemGestures());
